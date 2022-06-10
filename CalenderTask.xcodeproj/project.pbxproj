@@ -16,6 +16,7 @@
 		5E145716285219640078AF31 /* CalenderTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E145715285219640078AF31 /* CalenderTaskTests.swift */; };
 		5E145720285219640078AF31 /* CalenderTaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E14571F285219640078AF31 /* CalenderTaskUITests.swift */; };
 		5E145722285219640078AF31 /* CalenderTaskUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E145721285219640078AF31 /* CalenderTaskUITestsLaunchTests.swift */; };
+		5E14572F285222200078AF31 /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E14572E285222200078AF31 /* CalenderViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		5E14571B285219640078AF31 /* CalenderTaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalenderTaskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E14571F285219640078AF31 /* CalenderTaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderTaskUITests.swift; sourceTree = "<group>"; };
 		5E145721285219640078AF31 /* CalenderTaskUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderTaskUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5E14572E285222200078AF31 /* CalenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				5E145707285219630078AF31 /* Assets.xcassets */,
 				5E145709285219630078AF31 /* LaunchScreen.storyboard */,
 				5E14570C285219630078AF31 /* Info.plist */,
+				5E14572E285222200078AF31 /* CalenderViewController.swift */,
 			);
 			path = CalenderTask;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E14572F285222200078AF31 /* CalenderViewController.swift in Sources */,
 				5E1457032852195F0078AF31 /* ViewController.swift in Sources */,
 				5E1456FF2852195F0078AF31 /* AppDelegate.swift in Sources */,
 				5E1457012852195F0078AF31 /* SceneDelegate.swift in Sources */,
