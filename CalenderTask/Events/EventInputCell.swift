@@ -9,7 +9,13 @@ import UIKit
 
 class EventInputCell: UITableViewCell {
 
+    @IBOutlet weak var eventInputField: UITextField!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+//
+//    func configureForInput(){
+//        eventInputField.placeholder =
+//    }
 }

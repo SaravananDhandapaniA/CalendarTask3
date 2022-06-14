@@ -48,6 +48,11 @@ class CalendarViewModel {
         return range.count
     }
     
+    func monthsInYear(date: Date) -> Int {
+        guard let range = calendar.range(of: .month, in: .year, for: date) else {return Int()}
+        return range.count
+    }
+    
     func dayOfMonth(date: Date) -> Int? {
         let components = calendar.dateComponents([.day], from: date)
         return components.day
@@ -62,6 +67,4 @@ class CalendarViewModel {
         let components = calendar.dateComponents([.weekday], from: date)
         return components.weekday! - 1
     }
-    
-    
 }

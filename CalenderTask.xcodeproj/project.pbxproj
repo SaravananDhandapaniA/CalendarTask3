@@ -17,6 +17,12 @@
 		5E145720285219640078AF31 /* CalenderTaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E14571F285219640078AF31 /* CalenderTaskUITests.swift */; };
 		5E145722285219640078AF31 /* CalenderTaskUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E145721285219640078AF31 /* CalenderTaskUITestsLaunchTests.swift */; };
 		5E14572F285222200078AF31 /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E14572E285222200078AF31 /* CalenderViewController.swift */; };
+		5E26852028576C7F004AEFF7 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E26851F28576C7F004AEFF7 /* EventModel.swift */; };
+		5E26852228576CCD004AEFF7 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E26852128576CCD004AEFF7 /* EventViewModel.swift */; };
+		5E268524285855F6004AEFF7 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E268523285855F6004AEFF7 /* ExampleViewController.swift */; };
+		5E26852628585752004AEFF7 /* ExampleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E26852528585752004AEFF7 /* ExampleTableViewCell.swift */; };
+		5E2685282858592D004AEFF7 /* ExampleCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2685272858592D004AEFF7 /* ExampleCalendarCell.swift */; };
+		5E26852B285887EA004AEFF7 /* CalendarTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E26852A285887EA004AEFF7 /* CalendarTableCell.swift */; };
 		5E5C58EE2856FA9A006DF9D5 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5C58ED2856FA9A006DF9D5 /* CalendarCell.swift */; };
 		5E5C58F028570364006DF9D5 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5C58EF28570364006DF9D5 /* CalendarViewModel.swift */; };
 		5E5C58F228573593006DF9D5 /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5C58F128573593006DF9D5 /* AddEventViewController.swift */; };
@@ -56,6 +62,12 @@
 		5E14571F285219640078AF31 /* CalenderTaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderTaskUITests.swift; sourceTree = "<group>"; };
 		5E145721285219640078AF31 /* CalenderTaskUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderTaskUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5E14572E285222200078AF31 /* CalenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderViewController.swift; sourceTree = "<group>"; };
+		5E26851F28576C7F004AEFF7 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
+		5E26852128576CCD004AEFF7 /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
+		5E268523285855F6004AEFF7 /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
+		5E26852528585752004AEFF7 /* ExampleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTableViewCell.swift; sourceTree = "<group>"; };
+		5E2685272858592D004AEFF7 /* ExampleCalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleCalendarCell.swift; sourceTree = "<group>"; };
+		5E26852A285887EA004AEFF7 /* CalendarTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableCell.swift; sourceTree = "<group>"; };
 		5E5C58ED2856FA9A006DF9D5 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		5E5C58EF28570364006DF9D5 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		5E5C58F128573593006DF9D5 /* AddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
@@ -111,16 +123,17 @@
 		5E1456FD2852195F0078AF31 /* CalenderTask */ = {
 			isa = PBXGroup;
 			children = (
-				5E5C58F4285744C6006DF9D5 /* Delegates */,
 				5E5C58F328574496006DF9D5 /* ViewControllers */,
+				5E26852928587024004AEFF7 /* Example */,
+				5E5C58F4285744C6006DF9D5 /* Delegates */,
+				5E26851E28576C5B004AEFF7 /* Model */,
+				5E26852D28589768004AEFF7 /* Calendar */,
+				5E26852C28588CE4004AEFF7 /* Events */,
 				5E5C58F5285744DF006DF9D5 /* ViewModel */,
 				5E1457042852195F0078AF31 /* Main.storyboard */,
 				5E145707285219630078AF31 /* Assets.xcassets */,
 				5E145709285219630078AF31 /* LaunchScreen.storyboard */,
 				5E14570C285219630078AF31 /* Info.plist */,
-				5E5C58ED2856FA9A006DF9D5 /* CalendarCell.swift */,
-				5E5C58F628574969006DF9D5 /* EventInputCell.swift */,
-				5E5C58F828574996006DF9D5 /* EventTimeIntervalCell.swift */,
 			);
 			path = CalenderTask;
 			sourceTree = "<group>";
@@ -142,12 +155,48 @@
 			path = CalenderTaskUITests;
 			sourceTree = "<group>";
 		};
+		5E26851E28576C5B004AEFF7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5E26851F28576C7F004AEFF7 /* EventModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5E26852928587024004AEFF7 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				5E268523285855F6004AEFF7 /* ExampleViewController.swift */,
+				5E26852528585752004AEFF7 /* ExampleTableViewCell.swift */,
+				5E2685272858592D004AEFF7 /* ExampleCalendarCell.swift */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+		5E26852C28588CE4004AEFF7 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				5E5C58F128573593006DF9D5 /* AddEventViewController.swift */,
+				5E5C58F628574969006DF9D5 /* EventInputCell.swift */,
+				5E5C58F828574996006DF9D5 /* EventTimeIntervalCell.swift */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		5E26852D28589768004AEFF7 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				5E14572E285222200078AF31 /* CalenderViewController.swift */,
+				5E26852A285887EA004AEFF7 /* CalendarTableCell.swift */,
+				5E5C58ED2856FA9A006DF9D5 /* CalendarCell.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
 		5E5C58F328574496006DF9D5 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				5E1457022852195F0078AF31 /* ViewController.swift */,
-				5E14572E285222200078AF31 /* CalenderViewController.swift */,
-				5E5C58F128573593006DF9D5 /* AddEventViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -165,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				5E5C58EF28570364006DF9D5 /* CalendarViewModel.swift */,
+				5E26852128576CCD004AEFF7 /* EventViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -302,12 +352,18 @@
 			files = (
 				5E5C58F028570364006DF9D5 /* CalendarViewModel.swift in Sources */,
 				5E5C58F728574969006DF9D5 /* EventInputCell.swift in Sources */,
+				5E26852B285887EA004AEFF7 /* CalendarTableCell.swift in Sources */,
 				5E14572F285222200078AF31 /* CalenderViewController.swift in Sources */,
+				5E26852628585752004AEFF7 /* ExampleTableViewCell.swift in Sources */,
+				5E26852228576CCD004AEFF7 /* EventViewModel.swift in Sources */,
 				5E1457032852195F0078AF31 /* ViewController.swift in Sources */,
+				5E268524285855F6004AEFF7 /* ExampleViewController.swift in Sources */,
 				5E5C58F928574996006DF9D5 /* EventTimeIntervalCell.swift in Sources */,
 				5E1456FF2852195F0078AF31 /* AppDelegate.swift in Sources */,
 				5E5C58F228573593006DF9D5 /* AddEventViewController.swift in Sources */,
 				5E1457012852195F0078AF31 /* SceneDelegate.swift in Sources */,
+				5E26852028576C7F004AEFF7 /* EventModel.swift in Sources */,
+				5E2685282858592D004AEFF7 /* ExampleCalendarCell.swift in Sources */,
 				5E5C58EE2856FA9A006DF9D5 /* CalendarCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
