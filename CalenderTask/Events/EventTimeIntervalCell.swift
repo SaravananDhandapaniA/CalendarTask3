@@ -11,7 +11,6 @@ class EventTimeIntervalCell: UITableViewCell {
 
     @IBOutlet weak var intervelLabel: UILabel!
     @IBOutlet weak var intervelTimePicker: UIDatePicker!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

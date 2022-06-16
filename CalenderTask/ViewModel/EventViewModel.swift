@@ -9,10 +9,8 @@ import Foundation
 import UIKit
 
 class EventViewModel {
-    
-    var eventItem = [EventModel(about: "Input", list: ["title","Date"]),
-                     EventModel(about: "TimeIntervel", list: ["startTime","endTime"])]
-    
+    var eventItem = [EventModel(about: "Input", list: ["Title", "Date"]),
+                     EventModel(about: "TimeIntervel", list: ["Starts", "Ends"])]
     func numberOfRowsInSection(section: Int) -> Int {
         return eventItem[section].list.count
     }
@@ -26,4 +24,3 @@ class EventViewModel {
         return eventItem[section].about
     }
 }
-

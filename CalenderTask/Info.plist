@@ -21,5 +21,11 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>MYRIAAMI.TTF</string>
+		<string>MYRIADAS.TTF</string>
+		<string>MYRIADAB.TTF</string>
+	</array>
 </dict>
 </plist>

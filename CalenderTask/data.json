@@ -1,0 +1,23 @@
+
+{
+    "eventDataArray":[
+        {
+            "title":"Vinayagar Chadurthi",
+            "date": "20",
+            "startTime": "2:00 PM",
+            "endTime": "3:00 PM"
+        },
+        {
+            "title":"Diwali",
+            "date": "10",
+            "startTime": "5:00 PM",
+            "endTime": "6:00 PM"
+        },
+        {
+            "title":"Wish You a Very Happy NewYear",
+            "date": "1",
+            "startTime": "12:00 AM",
+            "endTime": "12:00 PM"
+        }
+           ]
+}

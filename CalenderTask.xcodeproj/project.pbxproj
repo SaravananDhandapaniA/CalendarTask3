@@ -21,13 +21,18 @@
 		5E26852228576CCD004AEFF7 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E26852128576CCD004AEFF7 /* EventViewModel.swift */; };
 		5E268524285855F6004AEFF7 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E268523285855F6004AEFF7 /* ExampleViewController.swift */; };
 		5E26852628585752004AEFF7 /* ExampleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E26852528585752004AEFF7 /* ExampleTableViewCell.swift */; };
-		5E2685282858592D004AEFF7 /* ExampleCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2685272858592D004AEFF7 /* ExampleCalendarCell.swift */; };
-		5E26852B285887EA004AEFF7 /* CalendarTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E26852A285887EA004AEFF7 /* CalendarTableCell.swift */; };
+		5E2685282858592D004AEFF7 /* MonthCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2685272858592D004AEFF7 /* MonthCalendarCell.swift */; };
+		5E26852F2859B523004AEFF7 /* DaysCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E26852E2859B523004AEFF7 /* DaysCalendarCell.swift */; };
 		5E5C58EE2856FA9A006DF9D5 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5C58ED2856FA9A006DF9D5 /* CalendarCell.swift */; };
 		5E5C58F028570364006DF9D5 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5C58EF28570364006DF9D5 /* CalendarViewModel.swift */; };
 		5E5C58F228573593006DF9D5 /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5C58F128573593006DF9D5 /* AddEventViewController.swift */; };
 		5E5C58F728574969006DF9D5 /* EventInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5C58F628574969006DF9D5 /* EventInputCell.swift */; };
 		5E5C58F928574996006DF9D5 /* EventTimeIntervalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5C58F828574996006DF9D5 /* EventTimeIntervalCell.swift */; };
+		5E8304A32859D93E004AE831 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E8304A22859D93E004AE831 /* data.json */; };
+		5E8304A52859E694004AE831 /* EventDisplayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8304A42859E694004AE831 /* EventDisplayCell.swift */; };
+		5EA9B467285A4C5400034A0D /* MYRIAAMI.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 5EA9B466285A4C5400034A0D /* MYRIAAMI.TTF */; };
+		5EA9B469285A4CE900034A0D /* MYRIADAS.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 5EA9B468285A4CE900034A0D /* MYRIADAS.TTF */; };
+		5EA9B46B285A4DAB00034A0D /* MYRIADAB.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 5EA9B46A285A4DAB00034A0D /* MYRIADAB.TTF */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,13 +71,18 @@
 		5E26852128576CCD004AEFF7 /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
 		5E268523285855F6004AEFF7 /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
 		5E26852528585752004AEFF7 /* ExampleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTableViewCell.swift; sourceTree = "<group>"; };
-		5E2685272858592D004AEFF7 /* ExampleCalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleCalendarCell.swift; sourceTree = "<group>"; };
-		5E26852A285887EA004AEFF7 /* CalendarTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableCell.swift; sourceTree = "<group>"; };
+		5E2685272858592D004AEFF7 /* MonthCalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthCalendarCell.swift; sourceTree = "<group>"; };
+		5E26852E2859B523004AEFF7 /* DaysCalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysCalendarCell.swift; sourceTree = "<group>"; };
 		5E5C58ED2856FA9A006DF9D5 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		5E5C58EF28570364006DF9D5 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		5E5C58F128573593006DF9D5 /* AddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
 		5E5C58F628574969006DF9D5 /* EventInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInputCell.swift; sourceTree = "<group>"; };
 		5E5C58F828574996006DF9D5 /* EventTimeIntervalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTimeIntervalCell.swift; sourceTree = "<group>"; };
+		5E8304A22859D93E004AE831 /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		5E8304A42859E694004AE831 /* EventDisplayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDisplayCell.swift; sourceTree = "<group>"; };
+		5EA9B466285A4C5400034A0D /* MYRIAAMI.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = MYRIAAMI.TTF; sourceTree = "<group>"; };
+		5EA9B468285A4CE900034A0D /* MYRIADAS.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = MYRIADAS.TTF; sourceTree = "<group>"; };
+		5EA9B46A285A4DAB00034A0D /* MYRIADAB.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = MYRIADAB.TTF; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +133,7 @@
 		5E1456FD2852195F0078AF31 /* CalenderTask */ = {
 			isa = PBXGroup;
 			children = (
+				5EA9B465285A4C0400034A0D /* Fonts */,
 				5E5C58F328574496006DF9D5 /* ViewControllers */,
 				5E26852928587024004AEFF7 /* Example */,
 				5E5C58F4285744C6006DF9D5 /* Delegates */,
@@ -134,6 +145,8 @@
 				5E145707285219630078AF31 /* Assets.xcassets */,
 				5E145709285219630078AF31 /* LaunchScreen.storyboard */,
 				5E14570C285219630078AF31 /* Info.plist */,
+				5E8304A22859D93E004AE831 /* data.json */,
+				5E8304A42859E694004AE831 /* EventDisplayCell.swift */,
 			);
 			path = CalenderTask;
 			sourceTree = "<group>";
@@ -168,7 +181,8 @@
 			children = (
 				5E268523285855F6004AEFF7 /* ExampleViewController.swift */,
 				5E26852528585752004AEFF7 /* ExampleTableViewCell.swift */,
-				5E2685272858592D004AEFF7 /* ExampleCalendarCell.swift */,
+				5E2685272858592D004AEFF7 /* MonthCalendarCell.swift */,
+				5E26852E2859B523004AEFF7 /* DaysCalendarCell.swift */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -187,7 +201,6 @@
 			isa = PBXGroup;
 			children = (
 				5E14572E285222200078AF31 /* CalenderViewController.swift */,
-				5E26852A285887EA004AEFF7 /* CalendarTableCell.swift */,
 				5E5C58ED2856FA9A006DF9D5 /* CalendarCell.swift */,
 			);
 			path = Calendar;
@@ -219,6 +232,16 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		5EA9B465285A4C0400034A0D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5EA9B46A285A4DAB00034A0D /* MYRIADAB.TTF */,
+				5EA9B466285A4C5400034A0D /* MYRIAAMI.TTF */,
+				5EA9B468285A4CE900034A0D /* MYRIADAS.TTF */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -226,6 +249,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5E145725285219640078AF31 /* Build configuration list for PBXNativeTarget "CalenderTask" */;
 			buildPhases = (
+				5E6615D9285AC51900E1C3CC /* Run SwiftLint */,
 				5E1456F72852195F0078AF31 /* Sources */,
 				5E1456F82852195F0078AF31 /* Frameworks */,
 				5E1456F92852195F0078AF31 /* Resources */,
@@ -323,9 +347,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EA9B467285A4C5400034A0D /* MYRIAAMI.TTF in Resources */,
 				5E14570B285219630078AF31 /* LaunchScreen.storyboard in Resources */,
 				5E145708285219630078AF31 /* Assets.xcassets in Resources */,
 				5E1457062852195F0078AF31 /* Main.storyboard in Resources */,
+				5EA9B469285A4CE900034A0D /* MYRIADAS.TTF in Resources */,
+				5E8304A32859D93E004AE831 /* data.json in Resources */,
+				5EA9B46B285A4DAB00034A0D /* MYRIADAB.TTF in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +373,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5E6615D9285AC51900E1C3CC /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5E1456F72852195F0078AF31 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -352,7 +401,7 @@
 			files = (
 				5E5C58F028570364006DF9D5 /* CalendarViewModel.swift in Sources */,
 				5E5C58F728574969006DF9D5 /* EventInputCell.swift in Sources */,
-				5E26852B285887EA004AEFF7 /* CalendarTableCell.swift in Sources */,
+				5E8304A52859E694004AE831 /* EventDisplayCell.swift in Sources */,
 				5E14572F285222200078AF31 /* CalenderViewController.swift in Sources */,
 				5E26852628585752004AEFF7 /* ExampleTableViewCell.swift in Sources */,
 				5E26852228576CCD004AEFF7 /* EventViewModel.swift in Sources */,
@@ -362,8 +411,9 @@
 				5E1456FF2852195F0078AF31 /* AppDelegate.swift in Sources */,
 				5E5C58F228573593006DF9D5 /* AddEventViewController.swift in Sources */,
 				5E1457012852195F0078AF31 /* SceneDelegate.swift in Sources */,
+				5E26852F2859B523004AEFF7 /* DaysCalendarCell.swift in Sources */,
 				5E26852028576C7F004AEFF7 /* EventModel.swift in Sources */,
-				5E2685282858592D004AEFF7 /* ExampleCalendarCell.swift in Sources */,
+				5E2685282858592D004AEFF7 /* MonthCalendarCell.swift in Sources */,
 				5E5C58EE2856FA9A006DF9D5 /* CalendarCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
