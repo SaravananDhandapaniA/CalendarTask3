@@ -16,6 +16,11 @@ class CalendarViewModel {
     func minusMonth(date: Date) -> Date {
         return calendar.date(byAdding: .month, value: -1, to: date)!
     }
+    func dateString(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        return dateFormatter.string(from: date)
+    }
     func dayString(date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd"
@@ -50,5 +55,11 @@ class CalendarViewModel {
     func weekDay(date: Date) -> Int {
         let components = calendar.dateComponents([.weekday], from: date)
         return components.weekday! - 1
+    }
+    func dateConverter(string: String) -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd"
+        let date = dateFormatter.date(from: string)!
+        return date
     }
 }
