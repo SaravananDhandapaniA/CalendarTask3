@@ -326,6 +326,9 @@
                             </barButtonItem>
                             <barButtonItem title="Item" image="magnifyingglass" catalog="system" id="a7i-gH-YZ8">
                                 <color key="tintColor" systemColor="systemRedColor"/>
+                                <connections>
+                                    <segue destination="FjM-6C-08A" kind="show" id="842-FE-xjc"/>
+                                </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
@@ -486,7 +489,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4E-07-eJK">
-                                <rect key="frame" x="186.5" y="64" width="41.5" height="20.5"/>
+                                <rect key="frame" x="186.5" y="108" width="41.5" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="Qby-ak-gHm"/>
                                 </constraints>
@@ -495,7 +498,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zPJ-97-ejo">
-                                <rect key="frame" x="0.0" y="84.5" width="414" height="40"/>
+                                <rect key="frame" x="0.0" y="128.5" width="414" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X04-bR-TeL">
                                         <rect key="frame" x="0.0" y="0.0" width="50.5" height="40"/>
@@ -545,7 +548,7 @@
                                 </constraints>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="1qc-B2-sOj">
-                                <rect key="frame" x="0.0" y="124.5" width="414" height="300"/>
+                                <rect key="frame" x="0.0" y="168.5" width="414" height="300"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="0Yc-qa-cGJ"/>
