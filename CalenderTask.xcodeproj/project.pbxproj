@@ -22,7 +22,6 @@
 		5E268524285855F6004AEFF7 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E268523285855F6004AEFF7 /* ExampleViewController.swift */; };
 		5E26852628585752004AEFF7 /* ExampleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E26852528585752004AEFF7 /* ExampleTableViewCell.swift */; };
 		5E2685282858592D004AEFF7 /* MonthCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2685272858592D004AEFF7 /* MonthCalendarCell.swift */; };
-		5E26852F2859B523004AEFF7 /* DaysCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E26852E2859B523004AEFF7 /* DaysCalendarCell.swift */; };
 		5E45BFD9285B075900D56140 /* EmptyEventDisplayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E45BFD8285B075900D56140 /* EmptyEventDisplayCell.swift */; };
 		5E5C58EE2856FA9A006DF9D5 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5C58ED2856FA9A006DF9D5 /* CalendarCell.swift */; };
 		5E5C58F028570364006DF9D5 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5C58EF28570364006DF9D5 /* CalendarViewModel.swift */; };
@@ -73,7 +72,6 @@
 		5E268523285855F6004AEFF7 /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
 		5E26852528585752004AEFF7 /* ExampleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTableViewCell.swift; sourceTree = "<group>"; };
 		5E2685272858592D004AEFF7 /* MonthCalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthCalendarCell.swift; sourceTree = "<group>"; };
-		5E26852E2859B523004AEFF7 /* DaysCalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysCalendarCell.swift; sourceTree = "<group>"; };
 		5E45BFD8285B075900D56140 /* EmptyEventDisplayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyEventDisplayCell.swift; sourceTree = "<group>"; };
 		5E5C58ED2856FA9A006DF9D5 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		5E5C58EF28570364006DF9D5 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
@@ -185,7 +183,6 @@
 				5E268523285855F6004AEFF7 /* ExampleViewController.swift */,
 				5E26852528585752004AEFF7 /* ExampleTableViewCell.swift */,
 				5E2685272858592D004AEFF7 /* MonthCalendarCell.swift */,
-				5E26852E2859B523004AEFF7 /* DaysCalendarCell.swift */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -205,6 +202,7 @@
 			children = (
 				5E14572E285222200078AF31 /* CalenderViewController.swift */,
 				5E5C58ED2856FA9A006DF9D5 /* CalendarCell.swift */,
+				5E5C58EF28570364006DF9D5 /* CalendarViewModel.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -229,7 +227,6 @@
 		5E5C58F5285744DF006DF9D5 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				5E5C58EF28570364006DF9D5 /* CalendarViewModel.swift */,
 				5E26852128576CCD004AEFF7 /* EventViewModel.swift */,
 			);
 			path = ViewModel;
@@ -252,7 +249,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5E145725285219640078AF31 /* Build configuration list for PBXNativeTarget "CalenderTask" */;
 			buildPhases = (
-				5E6615D9285AC51900E1C3CC /* Run SwiftLint */,
 				5E1456F72852195F0078AF31 /* Sources */,
 				5E1456F82852195F0078AF31 /* Frameworks */,
 				5E1456F92852195F0078AF31 /* Resources */,
@@ -376,27 +372,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		5E6615D9285AC51900E1C3CC /* Run SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Run SwiftLint";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		5E1456F72852195F0078AF31 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -415,7 +390,6 @@
 				5E1456FF2852195F0078AF31 /* AppDelegate.swift in Sources */,
 				5E5C58F228573593006DF9D5 /* AddEventViewController.swift in Sources */,
 				5E1457012852195F0078AF31 /* SceneDelegate.swift in Sources */,
-				5E26852F2859B523004AEFF7 /* DaysCalendarCell.swift in Sources */,
 				5E26852028576C7F004AEFF7 /* EventModel.swift in Sources */,
 				5E2685282858592D004AEFF7 /* MonthCalendarCell.swift in Sources */,
 				5E5C58EE2856FA9A006DF9D5 /* CalendarCell.swift in Sources */,

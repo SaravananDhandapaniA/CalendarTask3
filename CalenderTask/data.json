@@ -3,19 +3,43 @@
     "eventDataArray":[
         {
             "title":"Vinayagar Chadurthi",
-            "date": "2022-06-17",
+            "date": "2022-06-20",
+            "startTime": "2:00 PM",
+            "endTime": "3:00 PM"
+        },
+        {
+            "title":"Xmas",
+            "date": "2022-06-20",
             "startTime": "2:00 PM",
             "endTime": "3:00 PM"
         },
         {
             "title":"Diwali",
-            "date": "2022-06-17",
+            "date": "2022-06-21",
             "startTime": "5:00 PM",
             "endTime": "6:00 PM"
         },
         {
             "title":"Wish You a Very Happy NewYear",
             "date": "2022-06-17",
+            "startTime": "12:00 AM",
+            "endTime": "12:00 PM"
+        },
+        {
+            "title":"Wish You a Very Happy NewYear",
+            "date": "2022-06-30",
+            "startTime": "12:00 AM",
+            "endTime": "12:00 PM"
+        },
+        {
+            "title":"Happy birthday Saravanan",
+            "date": "2022-07-11",
+            "startTime": "12:00 AM",
+            "endTime": "12:00 PM"
+        },
+        {
+            "title":"Happy birthday",
+            "date": "2022-07-04",
             "startTime": "12:00 AM",
             "endTime": "12:00 PM"
         }

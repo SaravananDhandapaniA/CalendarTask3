@@ -7,27 +7,26 @@
 
 import UIKit
 
-class ExampleViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class ExampleViewController: UIViewController, UITableViewDataSource , UITableViewDelegate {
+   
+    @IBOutlet weak var monthTableView: UITableView!
+    
     @IBOutlet weak var month: UILabel!
-    @IBOutlet weak var calendarView: UIView!
-    @IBOutlet weak var monthCollectionView: UICollectionView!
     var viewModel = CalendarViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
-        monthCollectionView.delegate = self
-        monthCollectionView.dataSource = self
-        setCellsView()
+        monthTableView.delegate = self
+        monthTableView.dataSource = self
+        monthTableView.rowHeight = 300
     }
-    func setCellsView() {
-        guard  let flowLayout = monthCollectionView.collectionViewLayout as? UICollectionViewFlowLayout else {return}
-            flowLayout.estimatedItemSize = CGSize(width: 414, height: 300)
-        }
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+   
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 12
     }
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MonthCalendarCell", for: indexPath) as? MonthCalendarCell else {return UICollectionViewCell()}
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ExampleTableViewCell", for: indexPath) as? ExampleTableViewCell else {return UITableViewCell()}
         return cell
     }
+    
 }

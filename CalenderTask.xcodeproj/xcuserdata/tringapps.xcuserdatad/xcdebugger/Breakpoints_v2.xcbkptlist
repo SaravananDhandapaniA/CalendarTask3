@@ -36,5 +36,113 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3F6868B7-4026-413E-A23F-CBCDA917B0EB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CalenderTask/Calendar/CalenderViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "CalenderViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "3F6868B7-4026-413E-A23F-CBCDA917B0EB - 66aeaf44de04d4c4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CalenderTask.CalenderViewController.selectedDate.getter : Foundation.Date"
+                  moduleName = "CalenderTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tringapps/Desktop/CalenderTask/CalenderTask/Calendar/CalenderViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "111">
+               </Location>
+               <Location
+                  uuid = "3F6868B7-4026-413E-A23F-CBCDA917B0EB - 7fcbd20fe41f00c8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CalenderTask.CalenderViewController.selectedDate.setter : Foundation.Date"
+                  moduleName = "CalenderTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tringapps/Desktop/CalenderTask/CalenderTask/Calendar/CalenderViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "187">
+               </Location>
+               <Location
+                  uuid = "3F6868B7-4026-413E-A23F-CBCDA917B0EB - a43240288b22e9d9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CalenderTask.CalenderViewController.selectedDate.modify : Foundation.Date"
+                  moduleName = "CalenderTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tringapps/Desktop/CalenderTask/CalenderTask/Calendar/CalenderViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "3F6868B7-4026-413E-A23F-CBCDA917B0EB - 95bb1b4b9d3a9b37"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CalenderTask.CalenderViewController.selectedDate.modify : Foundation.Date with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "CalenderTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tringapps/Desktop/CalenderTask/CalenderTask/Calendar/CalenderViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "15">
+               </Location>
+               <Location
+                  uuid = "3F6868B7-4026-413E-A23F-CBCDA917B0EB - b9d34d7c0a4a1a21"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CalenderTask.CalenderViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; CalenderTask.CalenderViewController"
+                  moduleName = "CalenderTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tringapps/Desktop/CalenderTask/CalenderTask/Calendar/CalenderViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "410">
+               </Location>
+               <Location
+                  uuid = "3F6868B7-4026-413E-A23F-CBCDA917B0EB - 607e10706c123ae3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CalenderTask.CalenderViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;CalenderTask.CalenderViewController&gt;"
+                  moduleName = "CalenderTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tringapps/Desktop/CalenderTask/CalenderTask/Calendar/CalenderViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "367">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
