@@ -7,8 +7,10 @@
 
 import UIKit
 
+
 class CalenderViewController: UIViewController, UITableViewDelegate,
-                                UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
+                              UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource , addEventDelegate{
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var eventTableView: UITableView!
@@ -17,7 +19,6 @@ class CalenderViewController: UIViewController, UITableViewDelegate,
     var totalSquares = [String]()
     var currentDate = Date()
     var result: EventData?
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,19 +33,34 @@ class CalenderViewController: UIViewController, UITableViewDelegate,
     func prepareForCollectionView() {
         collectionView.dataSource = self
         collectionView.delegate = self
-        setCellsView()
+       // setCellsView()
         setMonthView()
     }
                                     
     @IBAction func nextMonth(_ sender: Any ) {
-       currentDate = viewModel.plusMonth(date: currentDate)
-        setMonthView()
+        guard let next = viewModel.plusMonth(date: viewModel.firstOfMonth(date: currentDate)) else {return}
+        let nextString = viewModel.monthString(date: next)
+        let curr = viewModel.monthString(date: Date())
+        if nextString == curr {
+            currentDate = Date()
+            setMonthView()
+        } else {
+            currentDate = next
+            setMonthView()
+        }
         eventTableView.reloadData()
-
     }
     @IBAction func prevMonth(_ sender: Any) {
-        currentDate = viewModel.minusMonth(date: currentDate)
+        guard let prev = viewModel.minusMonth(date: viewModel.firstOfMonth(date: currentDate)) else {return}
+        let prevString = viewModel.monthString(date: prev)
+        let curr = viewModel.monthString(date: Date())
+        if prevString == curr {
+            currentDate = Date()
+            setMonthView()
+        } else {
+        currentDate = prev
         setMonthView()
+        }
         eventTableView.reloadData()
     }
     
@@ -58,12 +74,12 @@ class CalenderViewController: UIViewController, UITableViewDelegate,
             print("Error:\(error)")
         }
     }
-    func setCellsView() {
-        let width = (collectionView.frame.size.width - 2) / 8
-        let height = (collectionView.frame.size.height - 2) / 8
-        guard let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else {return}
-        flowLayout.itemSize = CGSize(width: width, height: height)
-    }
+//    func setCellsView() {
+//        let width = (collectionView.frame.size.width - 2) / 8
+//        let height = (collectionView.frame.size.height - 2) / 8
+//        guard let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else {return}
+//        flowLayout.itemSize = CGSize(width: width, height: height)
+//    }
     func setMonthView() {
         totalSquares.removeAll()
         let daysInMonth = viewModel.daysInMonth(date: currentDate)
@@ -88,21 +104,36 @@ class CalenderViewController: UIViewController, UITableViewDelegate,
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarCell", for: indexPath) as? CalendarCell else {return UICollectionViewCell()}
         cell.dayOfMonth.text = totalSquares[indexPath.row]
-        cell.backgroundColor = .clear
-        cell.dayOfMonth.textColor = .black
-        let defaultDate = viewModel.dayString(date: currentDate)
-        if defaultDate == totalSquares[indexPath.row] {
+        cell.layer.cornerRadius = cell.frame.width / 2
+        if cell.isHidden {
+            cell.isHidden = false
+        }
+        let defaultDate = viewModel.dayString(date: Date())
+        let currentDate = viewModel.dayString(date: currentDate)
+        if defaultDate == totalSquares[indexPath.row] && defaultDate == currentDate {
             cell.backgroundColor = .red
             cell.dayOfMonth.textColor = .white
+        } else if defaultDate == totalSquares[indexPath.row] && defaultDate != currentDate {
+            cell.backgroundColor = .clear
+            cell.dayOfMonth.textColor = .red
+        } else if currentDate == totalSquares[indexPath.row] && currentDate != defaultDate {
+            cell.backgroundColor = .black
+            cell.dayOfMonth.textColor = .white
+        } else {
+            cell.backgroundColor = .clear
+            cell.dayOfMonth.textColor = .black
         }
-        cell.layer.cornerRadius = cell.frame.width / 2
+        
+        if (cell.dayOfMonth.text) == "" {
+            cell.isHidden = true
+        }
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) as? CalendarCell else {return}
         cell.backgroundColor = .black
         cell.dayOfMonth.textColor = .white
-        let selectedDate = "\(viewModel.yearString(date: currentDate) + "-" + viewModel.monthString(date: currentDate) + "-" + totalSquares[indexPath.row ])"
+        let selectedDate = "\(viewModel.yearString(date: currentDate) + "-" + viewModel.monthString(date: currentDate) + "-" + totalSquares[indexPath.row])"
         currentDate = viewModel.dateConverter(string: selectedDate)
         setMonthView()
         eventTableView.reloadData()
@@ -114,28 +145,49 @@ class CalenderViewController: UIViewController, UITableViewDelegate,
     }
     // TableView Delegate and DataSource Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return result?.eventDataArray.count  ?? 0
+        let filteredArray = eventMapping()
+        return filteredArray.isEmpty ? 1 : filteredArray.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if result?.eventDataArray[indexPath.row].date == viewModel.dateString(date: currentDate) {
-            guard let cell = eventTableView.dequeueReusableCell(withIdentifier: "EventDisplayCell", for: indexPath) as? EventDisplayCell else {return UITableViewCell()}
-            cell.eventTitle.text = result?.eventDataArray[indexPath.row].title
-            cell.eventStart.text = result?.eventDataArray[indexPath.row].startTime
-            cell.eventEnd.text = result?.eventDataArray[indexPath.row].endTime
-            return cell
-        } else {
+        let items = eventMapping()
+        if items.isEmpty {
             guard let cell = eventTableView.dequeueReusableCell(withIdentifier: "EmptyEventDisplayCell", for: indexPath) as? EmptyEventDisplayCell else {return UITableViewCell()}
             return cell
         }
+        guard let cell = eventTableView.dequeueReusableCell(withIdentifier: "EventDisplayCell", for: indexPath) as? EventDisplayCell else {return UITableViewCell()}
+        cell.eventTitle.text = items[indexPath.row].title
+        cell.eventStart.text = items[indexPath.row].startTime
+        cell.eventEnd.text = items[indexPath.row].endTime
+        return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         var height: CGFloat = CGFloat()
-        if result?.eventDataArray[indexPath.row].date == viewModel.dateString(date: currentDate) {
-            height = 60
+        let items = eventMapping()
+        if items.isEmpty {
+            height = 350
         } else {
             height = 60
         }
         return height
+    }
+    
+    @IBAction func addEventButtonTapped(_ sender: Any) {
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "EventViewController") as? EventViewController else {return}
+            vc.delegate = self
+            self.present(vc, animated: true, completion: nil)
+    }
+
+    
+    func eventMapping() -> [EventDataModel] {
+        guard let event = result?.eventDataArray else {return []}
+        let date = viewModel.dateString(date: currentDate)
+        let eventFilter = event.filter{$0.date == date}
+        return eventFilter
+    }
+    
+    func didAddEvent(_ events: EventDataModel) {
+        result?.eventDataArray.append(events)
+        eventTableView.reloadData()
     }
 
 }
