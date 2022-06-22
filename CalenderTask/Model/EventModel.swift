@@ -13,12 +13,12 @@ struct EventModel {
 }
 
 struct EventData: Decodable {
-    let eventDataArray: [EventDataModel]
+    var eventDataArray: [EventDataModel]
 }
 
 struct EventDataModel: Decodable {
-    let title: String?
-    let date: String?
-    let startTime: String?
-    let endTime: String?
+    var title: String?
+    var date: String?
+    var startTime: String?
+    var endTime: String?
 }
