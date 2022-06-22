@@ -12,8 +12,11 @@ import UIKit
 class CalendarViewModel {
 
     let date = Date()
-    let calendar = Calendar.current
-
+    var calendar : Calendar {
+    var calc = Calendar.current
+      calc.timeZone = TimeZone(secondsFromGMT: -3600*10) ?? .current
+       return calc
+    }
     func plusMonth(date: Date) -> Date? {
         return calendar.date(byAdding: .month, value: 1, to: date)
     }
@@ -27,12 +30,13 @@ class CalendarViewModel {
     }
     func dayString(date: Date) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd"
+        dateFormatter.dateFormat = "d"
         return dateFormatter.string(from: date)
     }
     func monthString(date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM"
+        dateFormatter.timeZone = TimeZone(secondsFromGMT: -3600*10)
         return dateFormatter.string(from: date)
     }
     func yearString(date: Date) -> String {

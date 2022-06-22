@@ -20,6 +20,7 @@ class CalenderViewController: UIViewController, UITableViewDelegate,
     var currentDate = Date()
     var result: EventData?
     
+    var selectedIndex = Int()
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareForCollectionView()
@@ -38,28 +39,31 @@ class CalenderViewController: UIViewController, UITableViewDelegate,
     }
                                     
     @IBAction func nextMonth(_ sender: Any ) {
-        guard let next = viewModel.plusMonth(date: viewModel.firstOfMonth(date: currentDate)) else {return}
+        guard let next = viewModel.plusMonth(date: currentDate) else {return}
+        let firstOfMonth = viewModel.firstOfMonth(date: next)
         let nextString = viewModel.monthString(date: next)
         let curr = viewModel.monthString(date: Date())
         if nextString == curr {
             currentDate = Date()
             setMonthView()
         } else {
-            currentDate = next
+            currentDate = firstOfMonth
+            print("current date after clicking next:\(currentDate)")
             setMonthView()
         }
         eventTableView.reloadData()
     }
     @IBAction func prevMonth(_ sender: Any) {
-        guard let prev = viewModel.minusMonth(date: viewModel.firstOfMonth(date: currentDate)) else {return}
+        guard let prev = viewModel.minusMonth(date: currentDate) else {return}
+        let firstOfMonth = viewModel.firstOfMonth(date: prev)
         let prevString = viewModel.monthString(date: prev)
         let curr = viewModel.monthString(date: Date())
         if prevString == curr {
             currentDate = Date()
             setMonthView()
         } else {
-        currentDate = prev
-        setMonthView()
+            currentDate = firstOfMonth
+            setMonthView()
         }
         eventTableView.reloadData()
     }
@@ -74,12 +78,7 @@ class CalenderViewController: UIViewController, UITableViewDelegate,
             print("Error:\(error)")
         }
     }
-//    func setCellsView() {
-//        let width = (collectionView.frame.size.width - 2) / 8
-//        let height = (collectionView.frame.size.height - 2) / 8
-//        guard let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else {return}
-//        flowLayout.itemSize = CGSize(width: width, height: height)
-//    }
+
     func setMonthView() {
         totalSquares.removeAll()
         let daysInMonth = viewModel.daysInMonth(date: currentDate)
@@ -108,19 +107,17 @@ class CalenderViewController: UIViewController, UITableViewDelegate,
         if cell.isHidden {
             cell.isHidden = false
         }
-        let defaultDate = viewModel.dayString(date: Date())
-        let currentDate = viewModel.dayString(date: currentDate)
-        if defaultDate == totalSquares[indexPath.row] && defaultDate == currentDate {
+
+        let currDate = viewModel.dayString(date: Date())
+        let selectedDate = viewModel.dayString(date: currentDate)
+        if currDate == totalSquares[indexPath.row] && currDate == selectedDate{
             cell.backgroundColor = .red
             cell.dayOfMonth.textColor = .white
-        } else if defaultDate == totalSquares[indexPath.row] && defaultDate != currentDate {
-            cell.backgroundColor = .clear
-            cell.dayOfMonth.textColor = .red
-        } else if currentDate == totalSquares[indexPath.row] && currentDate != defaultDate {
+        } else if selectedDate != currDate && selectedDate == totalSquares[indexPath.row] {
             cell.backgroundColor = .black
             cell.dayOfMonth.textColor = .white
         } else {
-            cell.backgroundColor = .clear
+             cell.backgroundColor = .clear
             cell.dayOfMonth.textColor = .black
         }
         
@@ -129,13 +126,15 @@ class CalenderViewController: UIViewController, UITableViewDelegate,
         }
         return cell
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) as? CalendarCell else {return}
-        cell.backgroundColor = .black
         cell.dayOfMonth.textColor = .white
+        cell.backgroundColor = .black
         let selectedDate = "\(viewModel.yearString(date: currentDate) + "-" + viewModel.monthString(date: currentDate) + "-" + totalSquares[indexPath.row])"
         currentDate = viewModel.dateConverter(string: selectedDate)
-        setMonthView()
+        monthLabel.text =  viewModel.dayString(date: currentDate) + " " + viewModel.monthString(date: currentDate) + " " + viewModel.yearString(date: currentDate)
+        collectionView.reloadData()
         eventTableView.reloadData()
     }
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
