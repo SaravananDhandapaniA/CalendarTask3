@@ -135,10 +135,10 @@
 		5E1456FD2852195F0078AF31 /* CalenderTask */ = {
 			isa = PBXGroup;
 			children = (
+				5E5C58F4285744C6006DF9D5 /* Delegates */,
 				5EA9B465285A4C0400034A0D /* Fonts */,
 				5E5C58F328574496006DF9D5 /* ViewControllers */,
 				5E26852928587024004AEFF7 /* Example */,
-				5E5C58F4285744C6006DF9D5 /* Delegates */,
 				5E26851E28576C5B004AEFF7 /* Model */,
 				5E26852D28589768004AEFF7 /* Calendar */,
 				5E26852C28588CE4004AEFF7 /* Events */,
@@ -148,8 +148,6 @@
 				5E145709285219630078AF31 /* LaunchScreen.storyboard */,
 				5E14570C285219630078AF31 /* Info.plist */,
 				5E8304A22859D93E004AE831 /* data.json */,
-				5E8304A42859E694004AE831 /* EventDisplayCell.swift */,
-				5E45BFD8285B075900D56140 /* EmptyEventDisplayCell.swift */,
 			);
 			path = CalenderTask;
 			sourceTree = "<group>";
@@ -197,6 +195,8 @@
 			isa = PBXGroup;
 			children = (
 				5E625AC928618E8700EDB87D /* EventViewController.swift */,
+				5E8304A42859E694004AE831 /* EventDisplayCell.swift */,
+				5E45BFD8285B075900D56140 /* EmptyEventDisplayCell.swift */,
 			);
 			path = Events;
 			sourceTree = "<group>";

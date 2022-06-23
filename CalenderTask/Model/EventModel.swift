@@ -12,11 +12,11 @@ struct EventModel {
     let list: [String]
 }
 
-struct EventData: Decodable {
+struct EventData: Decodable , Encodable{
     var eventDataArray: [EventDataModel]
 }
 
-struct EventDataModel: Decodable {
+struct EventDataModel: Decodable , Encodable {
     var title: String?
     var date: String?
     var startTime: String?

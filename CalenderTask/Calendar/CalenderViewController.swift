@@ -26,6 +26,7 @@ class CalenderViewController: UIViewController, UITableViewDelegate,
         prepareForCollectionView()
         prepareForTableView()
         parseJson()
+        retriveEventData()
     }
     func prepareForTableView() {
         eventTableView.dataSource = self
@@ -34,8 +35,17 @@ class CalenderViewController: UIViewController, UITableViewDelegate,
     func prepareForCollectionView() {
         collectionView.dataSource = self
         collectionView.delegate = self
-       // setCellsView()
         setMonthView()
+    }
+    
+    func retriveEventData() {
+        do{
+            guard let data = UserDefaults.standard.object(forKey: "myArray") as? Data else {return}
+            let obj = try PropertyListDecoder().decode([EventDataModel].self, from: data)
+            result?.eventDataArray = obj
+        } catch {
+            print(error)
+        }
     }
                                     
     @IBAction func nextMonth(_ sender: Any ) {
@@ -186,6 +196,12 @@ class CalenderViewController: UIViewController, UITableViewDelegate,
     
     func didAddEvent(_ events: EventDataModel) {
         result?.eventDataArray.append(events)
+        do{
+            let encodedData = try PropertyListEncoder().encode(result?.eventDataArray)
+            UserDefaults.standard.set(encodedData , forKey: "myArray")
+        } catch {
+            print(error)
+        }
         eventTableView.reloadData()
     }
 
