@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CEOnboardingCalendarCell" customModule="CalenderTask"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CEOnboardCalendar" id="gTV-IL-0wX" customClass="CEOnboardingCalendarCell" customModule="CalenderTask">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="800"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="800"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dkt-Wt-lab" userLabel="CEOnboardCalendar">
+                        <rect key="frame" x="20" y="40" width="374" height="740"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rjt-Cb-U46" customClass="CEOnBoardSummary" customModule="CalenderTask" customModuleProvider="target">
+                                <rect key="frame" x="10" y="30" width="354" height="600"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="600" id="7gi-4f-Pzy"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQp-FQ-Of5">
+                                <rect key="frame" x="112" y="650" width="150" height="31"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="it0-IY-Q9e"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="NEXT"/>
+                                <connections>
+                                    <action selector="nextButtonTapped:" destination="-1" eventType="touchUpInside" id="f6z-lU-06O"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jjY-A5-mXX">
+                                <rect key="frame" x="112" y="701" width="150" height="31"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="eF9-JS-IyQ"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="SKIP" cornerStyle="capsule"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="rjt-Cb-U46" secondAttribute="trailing" constant="10" id="3ao-dT-COo"/>
+                            <constraint firstItem="KQp-FQ-Of5" firstAttribute="top" secondItem="rjt-Cb-U46" secondAttribute="bottom" constant="20" id="LZE-CE-Lom"/>
+                            <constraint firstItem="rjt-Cb-U46" firstAttribute="top" secondItem="dkt-Wt-lab" secondAttribute="top" constant="30" id="Mct-ff-XcY"/>
+                            <constraint firstItem="jjY-A5-mXX" firstAttribute="centerX" secondItem="dkt-Wt-lab" secondAttribute="centerX" id="aS2-Vi-zj4"/>
+                            <constraint firstItem="jjY-A5-mXX" firstAttribute="top" secondItem="KQp-FQ-Of5" secondAttribute="bottom" constant="20" id="bsa-kE-DpJ"/>
+                            <constraint firstItem="KQp-FQ-Of5" firstAttribute="centerX" secondItem="dkt-Wt-lab" secondAttribute="centerX" id="fxs-6E-Ar9"/>
+                            <constraint firstItem="rjt-Cb-U46" firstAttribute="leading" secondItem="dkt-Wt-lab" secondAttribute="leading" constant="10" id="sQC-Zd-QC1"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="dkt-Wt-lab" secondAttribute="trailing" constant="20" id="2XI-EC-Dac"/>
+                <constraint firstItem="dkt-Wt-lab" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="7S0-8Q-o5D"/>
+                <constraint firstAttribute="bottom" secondItem="dkt-Wt-lab" secondAttribute="bottom" constant="20" id="P6e-tS-JgS"/>
+                <constraint firstItem="dkt-Wt-lab" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="40" id="kJw-oB-pPV"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="79.6875"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

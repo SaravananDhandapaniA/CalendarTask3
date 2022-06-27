@@ -1,0 +1,6 @@
+framework module Pods_CalenderTaskTests {
+  umbrella header "Pods-CalenderTaskTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

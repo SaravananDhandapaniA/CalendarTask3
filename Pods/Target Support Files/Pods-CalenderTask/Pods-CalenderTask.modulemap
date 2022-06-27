@@ -1,0 +1,6 @@
+framework module Pods_CalenderTask {
+  umbrella header "Pods-CalenderTask-umbrella.h"
+
+  export *
+  module * { export * }
+}
