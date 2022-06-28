@@ -31,7 +31,7 @@ class CEOnboardViewController: UIViewController , CEOnboardPageViewDelegate {
     }
     
     @IBAction func nextButtonTapped(_ sender: Any) {
-        if let index = OnBoardPageViewController?.currentIndex {
+        if let index = OnBoardPageViewController?.viewModel.currentIndex {
             switch index {
             case 0...2:
                 OnBoardPageViewController?.forwardPage()
@@ -44,7 +44,7 @@ class CEOnboardViewController: UIViewController , CEOnboardPageViewDelegate {
     }
     
     @IBAction func skipButtonTapped(_ sender: Any) {
-        if let index = OnBoardPageViewController?.currentIndex {
+        if let index = OnBoardPageViewController?.viewModel.currentIndex{
             switch index {
             case 0:
                 dismiss(animated: true, completion: nil)
@@ -68,7 +68,7 @@ class CEOnboardViewController: UIViewController , CEOnboardPageViewDelegate {
     }
     
     func updateUI() {
-        if let index = OnBoardPageViewController?.currentIndex {
+        if let index = OnBoardPageViewController?.viewModel.currentIndex {
             switch index {
             case 0:
                 nextButton.setTitle("NEXT", for: .normal)

@@ -35,8 +35,7 @@ class CEOnboardingContentController: UIViewController {
         animationView.animation = animation
         animationView.frame = view.bounds
         animationView.play()
-        animationView.loopMode = .loop
         animationView.backgroundBehavior = .pauseAndRestore
     }
-    
+
 }

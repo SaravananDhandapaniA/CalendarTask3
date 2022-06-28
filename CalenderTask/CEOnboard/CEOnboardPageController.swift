@@ -14,11 +14,7 @@ protocol CEOnboardPageViewDelegate : NSObjectProtocol {
 class CEOnboardPageController: UIPageViewController , UIPageViewControllerDataSource , UIPageViewControllerDelegate{
    
     weak var pageDelegate : CEOnboardPageViewDelegate?
-    var pageTitle = ["Calendar", "Custom Calendar Events", "Persist Events", "Custom Filter"]
-    var pageSubTitle = ["Calender is used to show the date","It is used to store the events","We can Create the event for any days","It is used to filter the Events"]
-    var pageAnimation = ["LottieCalendar","LottieCustomCalendar","LottieEvents","LottieFilter"]
-    
-    var currentIndex = 0
+   var viewModel = CEOnBoardViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,23 +41,23 @@ class CEOnboardPageController: UIPageViewController , UIPageViewControllerDataSo
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         if completed {
             if let contentView = pageViewController.viewControllers?.first as? CEOnboardingContentController {
-                currentIndex = contentView.index
-                pageDelegate?.didUpdatePageIndex(curretIndex: currentIndex)
+                viewModel.currentIndex = contentView.index
+                pageDelegate?.didUpdatePageIndex(curretIndex: viewModel.currentIndex)
             }
         }
     }
     
     
     func contentViewController(at index: Int) -> CEOnboardingContentController? {
-        if index < 0 || index >= pageTitle.count {
+        if index < 0 || index >= viewModel.pageTitle.count {
             return nil
         }
         
         let storyBoard = UIStoryboard(name: "CEOnboarding", bundle: nil)
         if let onBoardPageController = storyBoard.instantiateViewController(withIdentifier: "CEOnboardingContentController") as? CEOnboardingContentController {
-            onBoardPageController.animationFile = pageAnimation[index]
-            onBoardPageController.heading = pageTitle[index]
-            onBoardPageController.subHeading = pageSubTitle[index]
+            onBoardPageController.animationFile = viewModel.pageAnimation[index]
+            onBoardPageController.heading = viewModel.pageTitle[index]
+            onBoardPageController.subHeading = viewModel.pageSubTitle[index]
             onBoardPageController.index = index
             
             return onBoardPageController
@@ -70,15 +66,15 @@ class CEOnboardPageController: UIPageViewController , UIPageViewControllerDataSo
     }
     
     func forwardPage(){
-        currentIndex += 1
-        if let nextViewController = contentViewController(at: currentIndex) {
+        viewModel.currentIndex += 1
+        if let nextViewController = contentViewController(at: viewModel.currentIndex) {
             setViewControllers([nextViewController], direction: .forward, animated: true, completion: nil)
         }
     }
     
     func backwardPage() {
-        currentIndex -= 1
-        if let nextViewController = contentViewController(at: currentIndex) {
+        viewModel.currentIndex -= 1
+        if let nextViewController = contentViewController(at: viewModel.currentIndex) {
             setViewControllers([nextViewController], direction: .reverse, animated: true, completion: nil)
         }
     }

@@ -13,4 +13,9 @@ class CEMainCalendarCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var dayLabel: UILabel!
     
+    func configData() {
+        dateLabel.text = "1"
+        dayLabel.text = "MON"
+    }
+    
 }

@@ -11,7 +11,7 @@
         <!--Onboard View Controller-->
         <scene sceneID="J0e-6D-n3D">
             <objects>
-                <viewController storyboardIdentifier="CEOnboardViewController" id="zUv-DP-c2t" customClass="CEOnboardViewController" customModule="CalenderTask" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CEOnboardViewController" modalPresentationStyle="overFullScreen" id="zUv-DP-c2t" customClass="CEOnboardViewController" customModule="CalenderTask" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1Db-HT-e3Q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -130,7 +130,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i6y-lA-0jl">
                                                 <rect key="frame" x="7.5" y="0.0" width="41.5" height="24"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" red="0.90603417158126831" green="0.29797247052192688" blue="0.23521527647972107" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="subTitle" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txq-44-3JA">
@@ -170,6 +170,9 @@
             <point key="canvasLocation" x="976.81159420289862" y="26.785714285714285"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="9PN-LS-zPP"/>
+    </designables>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

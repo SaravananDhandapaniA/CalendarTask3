@@ -30,6 +30,16 @@
 		5E2F97F32869B90B002D1DFE /* LottieCustomCalendar.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E2F97EF2869B90A002D1DFE /* LottieCustomCalendar.json */; };
 		5E2F97F42869B90B002D1DFE /* LottieFilter.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E2F97F02869B90A002D1DFE /* LottieFilter.json */; };
 		5E2F97F52869B90B002D1DFE /* LottieEvents.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E2F97F12869B90B002D1DFE /* LottieEvents.json */; };
+		5E2F97FD286A1FE1002D1DFE /* CEReusableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2F97FB286A1FE1002D1DFE /* CEReusableController.swift */; };
+		5E2F9800286A29EB002D1DFE /* CEReusableController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E2F97FF286A29EB002D1DFE /* CEReusableController.xib */; };
+		5E2F9807286B097D002D1DFE /* CELabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2F9806286B097D002D1DFE /* CELabel.swift */; };
+		5E2F9809286B098C002D1DFE /* CEButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2F9808286B098C002D1DFE /* CEButton.swift */; };
+		5E2F980C286B0BDC002D1DFE /* CEPresentTitleSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2F980B286B0BDC002D1DFE /* CEPresentTitleSummary.swift */; };
+		5E2F980E286B0C07002D1DFE /* CEPresentTitleSummary.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E2F980D286B0C07002D1DFE /* CEPresentTitleSummary.xib */; };
+		5E2F9811286B15CA002D1DFE /* CECustomButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2F9810286B15CA002D1DFE /* CECustomButtons.swift */; };
+		5E2F9813286B15DD002D1DFE /* CECustomButtons.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E2F9812286B15DD002D1DFE /* CECustomButtons.xib */; };
+		5E2F9816286B34C0002D1DFE /* CEPresentDateHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2F9815286B34C0002D1DFE /* CEPresentDateHeader.swift */; };
+		5E2F9818286B34D9002D1DFE /* CEPresentDateHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E2F9817286B34D9002D1DFE /* CEPresentDateHeader.xib */; };
 		5E45BFD9285B075900D56140 /* EmptyEventDisplayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E45BFD8285B075900D56140 /* EmptyEventDisplayCell.swift */; };
 		5E5C58EE2856FA9A006DF9D5 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5C58ED2856FA9A006DF9D5 /* CalendarCell.swift */; };
 		5E5C58F028570364006DF9D5 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5C58EF28570364006DF9D5 /* CalendarViewModel.swift */; };
@@ -106,6 +116,16 @@
 		5E2F97EF2869B90A002D1DFE /* LottieCustomCalendar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LottieCustomCalendar.json; sourceTree = "<group>"; };
 		5E2F97F02869B90A002D1DFE /* LottieFilter.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LottieFilter.json; sourceTree = "<group>"; };
 		5E2F97F12869B90B002D1DFE /* LottieEvents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LottieEvents.json; sourceTree = "<group>"; };
+		5E2F97FB286A1FE1002D1DFE /* CEReusableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CEReusableController.swift; sourceTree = "<group>"; };
+		5E2F97FF286A29EB002D1DFE /* CEReusableController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CEReusableController.xib; sourceTree = "<group>"; };
+		5E2F9806286B097D002D1DFE /* CELabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CELabel.swift; sourceTree = "<group>"; };
+		5E2F9808286B098C002D1DFE /* CEButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CEButton.swift; sourceTree = "<group>"; };
+		5E2F980B286B0BDC002D1DFE /* CEPresentTitleSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CEPresentTitleSummary.swift; sourceTree = "<group>"; };
+		5E2F980D286B0C07002D1DFE /* CEPresentTitleSummary.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CEPresentTitleSummary.xib; sourceTree = "<group>"; };
+		5E2F9810286B15CA002D1DFE /* CECustomButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CECustomButtons.swift; sourceTree = "<group>"; };
+		5E2F9812286B15DD002D1DFE /* CECustomButtons.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CECustomButtons.xib; sourceTree = "<group>"; };
+		5E2F9815286B34C0002D1DFE /* CEPresentDateHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CEPresentDateHeader.swift; sourceTree = "<group>"; };
+		5E2F9817286B34D9002D1DFE /* CEPresentDateHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CEPresentDateHeader.xib; sourceTree = "<group>"; };
 		5E45BFD8285B075900D56140 /* EmptyEventDisplayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyEventDisplayCell.swift; sourceTree = "<group>"; };
 		5E5C58ED2856FA9A006DF9D5 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		5E5C58EF28570364006DF9D5 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
@@ -223,11 +243,13 @@
 				5E145709285219630078AF31 /* LaunchScreen.storyboard */,
 				5E14570C285219630078AF31 /* Info.plist */,
 				5E8304A22859D93E004AE831 /* data.json */,
+				5E2F9802286AE511002D1DFE /* Views */,
 				5E76D5CF286460BE00F89D99 /* CEOnboardExample */,
 				5E6DD3222865C08A0081AEBC /* CEUtilities */,
 				5E6DD3262865E8540081AEBC /* CEModels */,
 				5E6DD3252865E8160081AEBC /* CEMainCalendarView */,
 				5E2F97F62869DA82002D1DFE /* CEOnboard */,
+				5E2F9801286AC07F002D1DFE /* CEReusableController */,
 			);
 			path = CalenderTask;
 			sourceTree = "<group>";
@@ -298,6 +320,78 @@
 				5E76D5FB2864DF3B00F89D99 /* CEOnBoardViewModel.swift */,
 			);
 			path = CEOnboard;
+			sourceTree = "<group>";
+		};
+		5E2F9801286AC07F002D1DFE /* CEReusableController */ = {
+			isa = PBXGroup;
+			children = (
+				5E2F97FB286A1FE1002D1DFE /* CEReusableController.swift */,
+				5E2F97FF286A29EB002D1DFE /* CEReusableController.xib */,
+			);
+			path = CEReusableController;
+			sourceTree = "<group>";
+		};
+		5E2F9802286AE511002D1DFE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5E2F9803286AE53D002D1DFE /* Atoms */,
+				5E2F9804286AE547002D1DFE /* Molecules */,
+				5E2F9805286AE555002D1DFE /* Organisum */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5E2F9803286AE53D002D1DFE /* Atoms */ = {
+			isa = PBXGroup;
+			children = (
+				5E2F9806286B097D002D1DFE /* CELabel.swift */,
+				5E2F9808286B098C002D1DFE /* CEButton.swift */,
+			);
+			path = Atoms;
+			sourceTree = "<group>";
+		};
+		5E2F9804286AE547002D1DFE /* Molecules */ = {
+			isa = PBXGroup;
+			children = (
+				5E2F980F286B1508002D1DFE /* CECustomButtons */,
+				5E2F980A286B0B4B002D1DFE /* CEPresentTitleSummary */,
+			);
+			path = Molecules;
+			sourceTree = "<group>";
+		};
+		5E2F9805286AE555002D1DFE /* Organisum */ = {
+			isa = PBXGroup;
+			children = (
+				5E2F9814286B3450002D1DFE /* CEPresentDateHeader */,
+			);
+			path = Organisum;
+			sourceTree = "<group>";
+		};
+		5E2F980A286B0B4B002D1DFE /* CEPresentTitleSummary */ = {
+			isa = PBXGroup;
+			children = (
+				5E2F980B286B0BDC002D1DFE /* CEPresentTitleSummary.swift */,
+				5E2F980D286B0C07002D1DFE /* CEPresentTitleSummary.xib */,
+			);
+			path = CEPresentTitleSummary;
+			sourceTree = "<group>";
+		};
+		5E2F980F286B1508002D1DFE /* CECustomButtons */ = {
+			isa = PBXGroup;
+			children = (
+				5E2F9810286B15CA002D1DFE /* CECustomButtons.swift */,
+				5E2F9812286B15DD002D1DFE /* CECustomButtons.xib */,
+			);
+			path = CECustomButtons;
+			sourceTree = "<group>";
+		};
+		5E2F9814286B3450002D1DFE /* CEPresentDateHeader */ = {
+			isa = PBXGroup;
+			children = (
+				5E2F9815286B34C0002D1DFE /* CEPresentDateHeader.swift */,
+				5E2F9817286B34D9002D1DFE /* CEPresentDateHeader.xib */,
+			);
+			path = CEPresentDateHeader;
 			sourceTree = "<group>";
 		};
 		5E5C58F328574496006DF9D5 /* ViewControllers */ = {
@@ -520,17 +614,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E2F9818286B34D9002D1DFE /* CEPresentDateHeader.xib in Resources */,
 				5E2F97F42869B90B002D1DFE /* LottieFilter.json in Resources */,
 				5EA9B467285A4C5400034A0D /* MYRIAAMI.TTF in Resources */,
 				5E2F97F52869B90B002D1DFE /* LottieEvents.json in Resources */,
 				5E76D5E32864741800F89D99 /* CEOnboardingCalendarCell.xib in Resources */,
 				5E76D5EE2864761D00F89D99 /* CEOnboardingFilterCell.xib in Resources */,
 				5E76D5F62864C24F00F89D99 /* CEOnBoardSummary.xib in Resources */,
+				5E2F9813286B15DD002D1DFE /* CECustomButtons.xib in Resources */,
 				5E2F97F22869B90B002D1DFE /* LottieCalendar.json in Resources */,
 				5E14570B285219630078AF31 /* LaunchScreen.storyboard in Resources */,
 				5E145708285219630078AF31 /* Assets.xcassets in Resources */,
+				5E2F980E286B0C07002D1DFE /* CEPresentTitleSummary.xib in Resources */,
 				5E1457062852195F0078AF31 /* Main.storyboard in Resources */,
 				5E2F97E428696F9E002D1DFE /* CEMainEventsTableViewCell.xib in Resources */,
+				5E2F9800286A29EB002D1DFE /* CEReusableController.xib in Resources */,
 				5EA9B469285A4CE900034A0D /* MYRIADAS.TTF in Resources */,
 				5E8304A32859D93E004AE831 /* data.json in Resources */,
 				5E2F97F32869B90B002D1DFE /* LottieCustomCalendar.json in Resources */,
@@ -667,6 +765,9 @@
 				5E5C58F028570364006DF9D5 /* CalendarViewModel.swift in Sources */,
 				5E76D5ED2864761D00F89D99 /* CEOnboardingFilterCell.swift in Sources */,
 				5E6DD32128658CCB0081AEBC /* CEMainCalendarViewController.swift in Sources */,
+				5E2F97FD286A1FE1002D1DFE /* CEReusableController.swift in Sources */,
+				5E2F9816286B34C0002D1DFE /* CEPresentDateHeader.swift in Sources */,
+				5E2F9807286B097D002D1DFE /* CELabel.swift in Sources */,
 				5E6DD3282865E9610081AEBC /* CEMainCalendarViewModel.swift in Sources */,
 				5E45BFD9285B075900D56140 /* EmptyEventDisplayCell.swift in Sources */,
 				5E76D5FC2864DF3B00F89D99 /* CEOnBoardViewModel.swift in Sources */,
@@ -677,6 +778,8 @@
 				5E76D5FA2864DD8400F89D99 /* CEOnBoardModel.swift in Sources */,
 				5E2F97EC2869A9F4002D1DFE /* CEOnboardViewController.swift in Sources */,
 				5E2F97E328696F9D002D1DFE /* CEMainEventsTableViewCell.swift in Sources */,
+				5E2F980C286B0BDC002D1DFE /* CEPresentTitleSummary.swift in Sources */,
+				5E2F9809286B098C002D1DFE /* CEButton.swift in Sources */,
 				5E1457032852195F0078AF31 /* ViewController.swift in Sources */,
 				5E76D5E22864741800F89D99 /* CEOnboardingCalendarCell.swift in Sources */,
 				5E2F97EA286994CD002D1DFE /* CEOnboardPageController.swift in Sources */,
@@ -687,6 +790,7 @@
 				5E1457012852195F0078AF31 /* SceneDelegate.swift in Sources */,
 				5E76D5F82864C2A100F89D99 /* CEOnBoardSummary.swift in Sources */,
 				5E26852028576C7F004AEFF7 /* EventModel.swift in Sources */,
+				5E2F9811286B15CA002D1DFE /* CECustomButtons.swift in Sources */,
 				5E76D5D5286464E000F89D99 /* CEOnboardingViewController.swift in Sources */,
 				5E5C58EE2856FA9A006DF9D5 /* CalendarCell.swift in Sources */,
 			);

@@ -12,7 +12,6 @@ class CEOnboardingViewController: UIViewController ,UICollectionViewDelegate, UI
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var viewModel = CEOnBoardViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
