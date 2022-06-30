@@ -90,8 +90,12 @@
                     </view>
                     <connections>
                         <outlet property="nextButton" destination="yaS-D9-gcG" id="Re7-T1-Mah"/>
+                        <outlet property="nextHeightConstraint" destination="fZN-j0-R3s" id="fpM-g8-VqM"/>
+                        <outlet property="nextwidthConstraint" destination="M0l-Nk-2Fq" id="dko-Ip-fTh"/>
                         <outlet property="pageControl" destination="gvH-b5-Zxi" id="wb9-dj-UaP"/>
                         <outlet property="skipButton" destination="gh7-7j-XEv" id="Cq7-U9-NGI"/>
+                        <outlet property="skipHeightConstraint" destination="KGF-MY-6OW" id="QFh-jD-JcB"/>
+                        <outlet property="skipWidthConstraint" destination="eka-ZL-mgh" id="tWY-OA-ehg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="91S-Cv-aLx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -170,9 +174,6 @@
             <point key="canvasLocation" x="976.81159420289862" y="26.785714285714285"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="9PN-LS-zPP"/>
-    </designables>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

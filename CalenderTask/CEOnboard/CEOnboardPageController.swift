@@ -42,6 +42,7 @@ class CEOnboardPageController: UIPageViewController , UIPageViewControllerDataSo
         if completed {
             if let contentView = pageViewController.viewControllers?.first as? CEOnboardingContentController {
                 viewModel.currentIndex = contentView.index
+                print(viewModel.currentIndex)
                 pageDelegate?.didUpdatePageIndex(curretIndex: viewModel.currentIndex)
             }
         }

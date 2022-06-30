@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CEMainEventsTableViewCell" customModule="CalenderTask" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CEMainEventsTableViewCell" customModule="CalenderTask"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CEMainTableCell" id="KGk-i7-Jjw" customClass="CEMainEventsTableViewCell" customModule="CalenderTask" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -22,22 +22,37 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5cU-rU-YrX" userLabel="currentTimeView">
+                        <rect key="frame" x="57.5" y="0.0" width="356.5" height="2"/>
+                        <color key="backgroundColor" red="0.90603417158126831" green="0.29797247052192688" blue="0.23521527647972107" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="2" id="F85-5E-1qq"/>
+                        </constraints>
+                    </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D4W-Gc-8DN" userLabel="EventView">
-                        <rect key="frame" x="72.5" y="0.0" width="341.5" height="44"/>
+                        <rect key="frame" x="72.5" y="2" width="341.5" height="42"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="D4W-Gc-8DN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="FPr-Qj-hVv"/>
-                    <constraint firstAttribute="bottom" secondItem="D4W-Gc-8DN" secondAttribute="bottom" id="N9m-3r-Bc2"/>
+                    <constraint firstItem="5cU-rU-YrX" firstAttribute="leading" secondItem="wXD-ex-CBi" secondAttribute="trailing" id="KJJ-7J-zps"/>
+                    <constraint firstItem="D4W-Gc-8DN" firstAttribute="top" secondItem="5cU-rU-YrX" secondAttribute="bottom" id="MN8-gg-CZi"/>
+                    <constraint firstAttribute="trailing" secondItem="5cU-rU-YrX" secondAttribute="trailing" id="Mep-UM-Bt3"/>
                     <constraint firstItem="wXD-ex-CBi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="VbJ-KX-ZdY"/>
-                    <constraint firstAttribute="trailing" secondItem="D4W-Gc-8DN" secondAttribute="trailing" id="fUT-Ix-H5q"/>
-                    <constraint firstItem="D4W-Gc-8DN" firstAttribute="leading" secondItem="wXD-ex-CBi" secondAttribute="trailing" constant="15" id="vZm-JF-ZG4"/>
+                    <constraint firstAttribute="bottom" secondItem="D4W-Gc-8DN" secondAttribute="bottom" id="c2Z-gO-fVu"/>
+                    <constraint firstAttribute="trailing" secondItem="D4W-Gc-8DN" secondAttribute="trailing" id="qeX-3I-J6q"/>
+                    <constraint firstItem="D4W-Gc-8DN" firstAttribute="leading" secondItem="wXD-ex-CBi" secondAttribute="trailing" constant="15" id="vAV-VX-7Xz"/>
+                    <constraint firstItem="5cU-rU-YrX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="waG-7M-dFj"/>
                     <constraint firstItem="wXD-ex-CBi" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="xbk-P8-j7U"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="137.68115942028987" y="97.767857142857139"/>
+            <connections>
+                <outlet property="currentTimeView" destination="5cU-rU-YrX" id="sGy-5S-XcK"/>
+                <outlet property="eventView" destination="D4W-Gc-8DN" id="vjM-nL-rco"/>
+                <outlet property="timeLabel" destination="wXD-ex-CBi" id="jD7-Un-qEq"/>
+            </connections>
+            <point key="canvasLocation" x="75.362318840579718" y="95.089285714285708"/>
         </tableViewCell>
     </objects>
 </document>

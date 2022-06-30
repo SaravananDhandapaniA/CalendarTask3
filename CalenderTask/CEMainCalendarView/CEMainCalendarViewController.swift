@@ -9,71 +9,70 @@ import UIKit
 
 class CEMainCalendarViewController: UIViewController {
     
-//    @IBOutlet weak var addEventButton: UIButton!
-//    @IBOutlet weak var eventOrganizerButton: UIButton!
-//    @IBOutlet weak var presentDateLabel: UILabel!
-//    @IBOutlet weak var presentTaskCountLabel: UILabel!
-    
     @IBOutlet weak var presentDateView: CEPresentDateHeader!
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var allDayEventView: UIView!
+    @IBOutlet weak var ReusableTableView: CEReusableTableView!
     
+    var selectedDate = Date()
+    var selectedIndex : IndexPath = [0,14]
     var currentDate = Date()
-    var selectedDate = 28
     var viewModel = CEMainCalendarViewModel()
-    var dateArray: NSArray
+    var dateArray: [Date]
     {
-        return viewModel.arrayOfDates()
-    }
-    var dayArray : NSArray {
-        return viewModel.arrayOfDays()
+        return viewModel.dates
     }
     
+    var timeArray: [Date]
+    {
+        return viewModel.timeResult
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareCollectionView()
         prepareTableView()
-        buttonImageLoad()
+        preparePresentDateView()
+//        viewModel.currentTime()
     }
     
-    func buttonImageLoad() {
-        presentDateView.presentButtonView.leftButton.setImage(UIImage(named: "PlusIcon"), for: .normal)
-        presentDateView.presentButtonView.rightButton.setImage(UIImage(named: "EventsIcon"), for: .normal)
+    func preparePresentDateView() {
+        presentDateView.presentTitleView.topLabel.text = viewModel.presentDateConverter(date: viewModel.startDate)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(CEMainCalendarViewController.tapFunction))
+        presentDateView.presentTitleView.topLabel.isUserInteractionEnabled = true
+        presentDateView.presentTitleView.topLabel.addGestureRecognizer(tap)
+        presentDateView.presentButtonView.leftButton.setImage(UIImage(named: "AddIcon"), for: .normal)
+        presentDateView.presentButtonView.rightButton.setImage(UIImage(named: "EventIcon"), for: .normal)
     }
+    
+    
+    @objc func tapFunction(sender:UITapGestureRecognizer) {
+        collectionView.selectItem(at:selectedIndex, animated: false, scrollPosition: .centeredHorizontally)
+        }
     
     func registerTableCell() {
-        self.tableView.register(UINib.init(nibName: "CEMainEventsTableViewCell", bundle: .main), forCellReuseIdentifier: "CEMainTableCell")
+        self.ReusableTableView.tableView.register(UINib.init(nibName: "CEMainEventsTableViewCell", bundle: .main), forCellReuseIdentifier: "CEMainTableCell")
     }
     
     
     func prepareTableView() {
-        tableView.dataSource = self
-        tableView.delegate = self
+        ReusableTableView.tableView.dataSource = self
+        ReusableTableView.tableView.delegate = self
         registerTableCell()
-        tableView.rowHeight = 80
+        ReusableTableView.tableView.rowHeight = 80
+//        let nextDate = Calendar.current.date(byAdding: .day, value: 1, to: selectedDate)
+        let _ = viewModel.timeArray(fromStart: viewModel.dateConverter(string: "2022-06-30 12:00 AM"), toEnd: viewModel.dateConverter(string: "2022-07-01 12:00 AM") , component: .minute, value: 30)
     }
     
     func prepareCollectionView() {
         collectionView.dataSource = self
         collectionView.delegate = self
-    }
-    
-    
-    
-    @IBAction func addEventTapped(_ sender: Any) {
-        let detail = CEReusableController()
-        self.present(detail, animated: true, completion: nil)
-    }
-    
-    @IBAction func eventOrganizerTapped(_ sender: Any) {
-        
+        let _ = viewModel.dateArray()
+        collectionView.selectItem(at:selectedIndex, animated: false, scrollPosition: .centeredHorizontally)
     }
 
+
     @IBAction func filterButtonTapped(_ sender: Any) {
-//        let storyBoard = UIStoryboard(name: "CEReusableViewController", bundle: nil)
-//        guard let vc = storyBoard.instantiateViewController(withIdentifier: "CEReusableViewController") as? CEReusableViewController else {return}
-//        self.present(vc, animated: true, completion: nil)
         let detail = CEReusableController()
         self.present(detail, animated: true, completion: nil)
     }
@@ -84,68 +83,64 @@ class CEMainCalendarViewController: UIViewController {
 extension CEMainCalendarViewController : UICollectionViewDataSource , UICollectionViewDelegate , UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        return dateArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CEMainCollectionCell", for: indexPath) as? CEMainCalendarCollectionViewCell else {return UICollectionViewCell()}
-        cell.dateLabel.text = self.dateArray[indexPath.row] as? String
-        cell.dayLabel.text = self.dayArray[indexPath.row] as? String
-        cell.oval()
+        cell.configData(viewModel.dayString(date: dateArray[indexPath.row]), viewModel.dayInWeek(dateArray[indexPath.row]))
+        cell.setup(viewModel.startDate,dateArray[indexPath.row])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let centeredIndexPath = IndexPath.init(item: selectedDate, section: 0)
-        collectionView.scrollToItem(at: centeredIndexPath, at: .centeredHorizontally, animated: true)
-        if indexPath == centeredIndexPath {
-            collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        guard let cell = collectionView.cellForItem(at: indexPath) as? CEMainCalendarCollectionViewCell else {return}
+        selectedDate = dateArray[indexPath.row]
+        cell.selectedCellView(indexPath)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? CEMainCalendarCollectionViewCell else {return}
+        cell.deSelectedCellView(indexPath)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if (indexPath.row == dateArray.count - 1) {
+            viewModel.scrollDate = dateArray[indexPath.row]
+            let _ = viewModel.scrollForward()
+            collectionView.reloadData()
         }
+        
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        if collectionView == scrollView {
-            setSelectedItemFromScrollView(scrollView)
-        }
-    }
-    
-    func setSelectedItemFromScrollView(_ scrollView: UIScrollView) {
-        if collectionView == scrollView {
-            let center = CGPoint(x: scrollView.center.x + scrollView.contentOffset.x, y: scrollView.center.y + scrollView.contentOffset.y)
-            let index = collectionView.indexPathForItem(at: center)
-            if index != nil {
-                collectionView.scrollToItem(at: index!, at: .centeredHorizontally, animated: true)
-                self.collectionView.selectItem(at: index, animated: false, scrollPosition: [])
-                self.collectionView(self.collectionView, didSelectItemAt: index!)
-                
-                self.selectedDate = (index?.row)!
-//                self.selectedDateLabel.text = self.calendarArray?[(index?.row)!] as! String?
-            }
-            else {
+        for cell in collectionView.visibleCells {
+            let indexPath = collectionView.indexPath(for: cell)
+            if (indexPath?.row == 0) {
+                viewModel.scrollDate = dateArray[indexPath!.row]
+                let _ = viewModel.scrollBackward()
+                selectedIndex.item += 4
+                collectionView.reloadData()
             }
         }
     }
-    
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if collectionView == scrollView && !decelerate  {
-                    setSelectedItemFromScrollView(scrollView)
-                }
-    }
-    
+
+
     
 }
 
 
 extension CEMainCalendarViewController : UITableViewDataSource, UITableViewDelegate {
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return timeArray.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CEMainTableCell", for: indexPath) as? CEMainEventsTableViewCell  else {return UITableViewCell()}
+        guard let cell = ReusableTableView.tableView.dequeueReusableCell(withIdentifier: "CEMainTableCell", for: indexPath) as? CEMainEventsTableViewCell  else {return UITableViewCell()}
+        cell.timeLabel.text = viewModel.timeCalculateConverter(date: timeArray[indexPath.row])
         return cell
     }
-    
-    
+
 }
+

@@ -8,9 +8,16 @@
 import UIKit
 
 class CEMainEventsTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var timeLabel: UILabel!
+    
+    @IBOutlet weak var eventView: UIView!
+    
+    @IBOutlet weak var currentTimeView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
     }
+    
 }

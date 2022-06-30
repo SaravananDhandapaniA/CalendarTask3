@@ -835,16 +835,17 @@
                                     <constraint firstAttribute="height" constant="80" id="Y17-mM-WUo"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="EiK-dX-rvv">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xle-HJ-pOb" customClass="CEReusableTableView" customModule="CalenderTask">
                                 <rect key="frame" x="0.0" y="393" width="414" height="469"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="M0k-aW-7IV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="M0k-aW-7IV" firstAttribute="trailing" secondItem="Erl-EE-XyY" secondAttribute="trailing" id="23P-Iu-lVP"/>
-                            <constraint firstItem="EiK-dX-rvv" firstAttribute="top" secondItem="Erl-EE-XyY" secondAttribute="bottom" id="IKa-tR-NKN"/>
+                            <constraint firstItem="M0k-aW-7IV" firstAttribute="bottom" secondItem="Xle-HJ-pOb" secondAttribute="bottom" id="ABh-Wc-vRj"/>
+                            <constraint firstItem="M0k-aW-7IV" firstAttribute="trailing" secondItem="Xle-HJ-pOb" secondAttribute="trailing" id="Dah-hR-pBv"/>
                             <constraint firstItem="3lF-2Y-orS" firstAttribute="trailing" secondItem="M0k-aW-7IV" secondAttribute="trailing" id="Kkc-ag-b4F"/>
                             <constraint firstItem="3lF-2Y-orS" firstAttribute="top" secondItem="M0k-aW-7IV" secondAttribute="top" constant="20" id="Mdr-72-qNM"/>
                             <constraint firstItem="Erl-EE-XyY" firstAttribute="top" secondItem="BQ1-W7-cMA" secondAttribute="bottom" constant="5" id="RRF-7k-ici"/>
@@ -853,23 +854,23 @@
                             <constraint firstItem="Erl-EE-XyY" firstAttribute="leading" secondItem="M0k-aW-7IV" secondAttribute="leading" id="VD3-Vv-gE1"/>
                             <constraint firstItem="BQ1-W7-cMA" firstAttribute="trailing" secondItem="M0k-aW-7IV" secondAttribute="trailing" id="WVN-85-clA"/>
                             <constraint firstItem="BQ1-W7-cMA" firstAttribute="top" secondItem="3lF-2Y-orS" secondAttribute="bottom" constant="20" id="aLP-qR-K7W"/>
-                            <constraint firstItem="M0k-aW-7IV" firstAttribute="bottom" secondItem="EiK-dX-rvv" secondAttribute="bottom" id="sP1-YU-c52"/>
-                            <constraint firstItem="M0k-aW-7IV" firstAttribute="trailing" secondItem="EiK-dX-rvv" secondAttribute="trailing" id="sU0-IL-C4G"/>
-                            <constraint firstItem="EiK-dX-rvv" firstAttribute="leading" secondItem="M0k-aW-7IV" secondAttribute="leading" id="yxy-bu-uLp"/>
+                            <constraint firstItem="Xle-HJ-pOb" firstAttribute="top" secondItem="Erl-EE-XyY" secondAttribute="bottom" id="fFn-gc-B3p"/>
+                            <constraint firstItem="Xle-HJ-pOb" firstAttribute="leading" secondItem="M0k-aW-7IV" secondAttribute="leading" id="ouc-ew-LwR"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Custom Calendar" id="awj-FR-aB0">
                         <barButtonItem key="rightBarButtonItem" title="Filter" image="FilterIcon" id="vAQ-bQ-3Ej">
+                            <color key="tintColor" red="0.90603417158126831" green="0.29797247052192688" blue="0.23521527647972107" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="filterButtonTapped:" destination="07f-oN-p9h" id="3F8-f5-SsC"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="ReusableTableView" destination="Xle-HJ-pOb" id="CX0-gO-ubk"/>
                         <outlet property="allDayEventView" destination="Erl-EE-XyY" id="uFf-Bn-Ok6"/>
                         <outlet property="collectionView" destination="BQ1-W7-cMA" id="FEE-zM-Fzs"/>
                         <outlet property="presentDateView" destination="3lF-2Y-orS" id="B7t-lX-QNO"/>
-                        <outlet property="tableView" destination="EiK-dX-rvv" id="7w9-BS-tBa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9zf-h5-78r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

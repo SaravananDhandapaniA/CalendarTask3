@@ -59,6 +59,8 @@
 		5E76D5F82864C2A100F89D99 /* CEOnBoardSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E76D5F72864C2A100F89D99 /* CEOnBoardSummary.swift */; };
 		5E76D5FA2864DD8400F89D99 /* CEOnBoardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E76D5F92864DD8400F89D99 /* CEOnBoardModel.swift */; };
 		5E76D5FC2864DF3B00F89D99 /* CEOnBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E76D5FB2864DF3B00F89D99 /* CEOnBoardViewModel.swift */; };
+		5E776F1C286D655F00B7105C /* CEReusableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E776F1B286D655F00B7105C /* CEReusableTableView.swift */; };
+		5E776F1E286D65B600B7105C /* CEReusableTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E776F1D286D65B600B7105C /* CEReusableTableView.xib */; };
 		5E8304A32859D93E004AE831 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E8304A22859D93E004AE831 /* data.json */; };
 		5E8304A52859E694004AE831 /* EventDisplayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8304A42859E694004AE831 /* EventDisplayCell.swift */; };
 		5EA9B467285A4C5400034A0D /* MYRIAAMI.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 5EA9B466285A4C5400034A0D /* MYRIAAMI.TTF */; };
@@ -145,6 +147,8 @@
 		5E76D5F72864C2A100F89D99 /* CEOnBoardSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CEOnBoardSummary.swift; sourceTree = "<group>"; };
 		5E76D5F92864DD8400F89D99 /* CEOnBoardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CEOnBoardModel.swift; sourceTree = "<group>"; };
 		5E76D5FB2864DF3B00F89D99 /* CEOnBoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CEOnBoardViewModel.swift; sourceTree = "<group>"; };
+		5E776F1B286D655F00B7105C /* CEReusableTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CEReusableTableView.swift; sourceTree = "<group>"; };
+		5E776F1D286D65B600B7105C /* CEReusableTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CEReusableTableView.xib; sourceTree = "<group>"; };
 		5E8304A22859D93E004AE831 /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		5E8304A42859E694004AE831 /* EventDisplayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDisplayCell.swift; sourceTree = "<group>"; };
 		5EA9B466285A4C5400034A0D /* MYRIAAMI.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = MYRIAAMI.TTF; sourceTree = "<group>"; };
@@ -238,11 +242,11 @@
 				5E26852D28589768004AEFF7 /* Calendar */,
 				5E26851E28576C5B004AEFF7 /* Model */,
 				5E5C58F328574496006DF9D5 /* ViewControllers */,
-				5E1457042852195F0078AF31 /* Main.storyboard */,
 				5E145707285219630078AF31 /* Assets.xcassets */,
 				5E145709285219630078AF31 /* LaunchScreen.storyboard */,
 				5E14570C285219630078AF31 /* Info.plist */,
 				5E8304A22859D93E004AE831 /* data.json */,
+				5E1457042852195F0078AF31 /* Main.storyboard */,
 				5E2F9802286AE511002D1DFE /* Views */,
 				5E76D5CF286460BE00F89D99 /* CEOnboardExample */,
 				5E6DD3222865C08A0081AEBC /* CEUtilities */,
@@ -362,6 +366,7 @@
 		5E2F9805286AE555002D1DFE /* Organisum */ = {
 			isa = PBXGroup;
 			children = (
+				5E776F16286D624D00B7105C /* CEReusableTableview */,
 				5E2F9814286B3450002D1DFE /* CEPresentDateHeader */,
 			);
 			path = Organisum;
@@ -493,6 +498,15 @@
 				5E76D5F72864C2A100F89D99 /* CEOnBoardSummary.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		5E776F16286D624D00B7105C /* CEReusableTableview */ = {
+			isa = PBXGroup;
+			children = (
+				5E776F1B286D655F00B7105C /* CEReusableTableView.swift */,
+				5E776F1D286D65B600B7105C /* CEReusableTableView.xib */,
+			);
+			path = CEReusableTableview;
 			sourceTree = "<group>";
 		};
 		5EA9B465285A4C0400034A0D /* Fonts */ = {
@@ -630,6 +644,7 @@
 				5E2F97E428696F9E002D1DFE /* CEMainEventsTableViewCell.xib in Resources */,
 				5E2F9800286A29EB002D1DFE /* CEReusableController.xib in Resources */,
 				5EA9B469285A4CE900034A0D /* MYRIADAS.TTF in Resources */,
+				5E776F1E286D65B600B7105C /* CEReusableTableView.xib in Resources */,
 				5E8304A32859D93E004AE831 /* data.json in Resources */,
 				5E2F97F32869B90B002D1DFE /* LottieCustomCalendar.json in Resources */,
 				5E2F97E628698997002D1DFE /* CEOnboarding.storyboard in Resources */,
@@ -780,6 +795,7 @@
 				5E2F97E328696F9D002D1DFE /* CEMainEventsTableViewCell.swift in Sources */,
 				5E2F980C286B0BDC002D1DFE /* CEPresentTitleSummary.swift in Sources */,
 				5E2F9809286B098C002D1DFE /* CEButton.swift in Sources */,
+				5E776F1C286D655F00B7105C /* CEReusableTableView.swift in Sources */,
 				5E1457032852195F0078AF31 /* ViewController.swift in Sources */,
 				5E76D5E22864741800F89D99 /* CEOnboardingCalendarCell.swift in Sources */,
 				5E2F97EA286994CD002D1DFE /* CEOnboardPageController.swift in Sources */,
