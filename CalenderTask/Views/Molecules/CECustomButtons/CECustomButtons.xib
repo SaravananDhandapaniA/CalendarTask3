@@ -27,12 +27,18 @@
                             <color key="tintColor" red="0.90603417158126831" green="0.29797247052192688" blue="0.23521527647972107" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain"/>
+                            <connections>
+                                <action selector="leftButtonTapped:" destination="-1" eventType="touchUpInside" id="nar-cx-Phn"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NQ2-0W-tiS">
                             <rect key="frame" x="106.5" y="0.0" width="106.5" height="105"/>
                             <color key="tintColor" red="0.90603417158126831" green="0.29797247052192688" blue="0.23521527647972107" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain"/>
+                            <connections>
+                                <action selector="rightButtonTapped:" destination="-1" eventType="touchUpInside" id="saN-SH-EVf"/>
+                            </connections>
                         </button>
                     </subviews>
                 </stackView>

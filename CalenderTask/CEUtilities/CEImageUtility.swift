@@ -25,4 +25,18 @@ extension UICollectionViewCell {
         self.layer.cornerRadius = 15
         self.layer.masksToBounds = true
     }
+    
+    func circle() {
+        self.layer.masksToBounds = true
+//        self.layer.cornerRadius = self.frame.width / 2
+        self.layer.cornerRadius = 15
+    }
+}
+
+extension UIView {
+    
+    func Viewoval() {
+        self.layer.cornerRadius = 15
+        self.layer.masksToBounds = true
+    }
 }

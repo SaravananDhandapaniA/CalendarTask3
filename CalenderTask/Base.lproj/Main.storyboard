@@ -860,7 +860,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Custom Calendar" id="awj-FR-aB0">
                         <barButtonItem key="rightBarButtonItem" title="Filter" image="FilterIcon" id="vAQ-bQ-3Ej">
-                            <color key="tintColor" red="0.90603417158126831" green="0.29797247052192688" blue="0.23521527647972107" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.90588235294117647" green="0.29803921568627451" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="filterButtonTapped:" destination="07f-oN-p9h" id="3F8-f5-SsC"/>
                             </connections>

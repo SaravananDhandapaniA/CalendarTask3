@@ -15,9 +15,13 @@ class CEMainEventsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var currentTimeView: UIView!
     
+    @IBOutlet weak var eventTitle: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        eventView.Viewoval()
     }
     
 }

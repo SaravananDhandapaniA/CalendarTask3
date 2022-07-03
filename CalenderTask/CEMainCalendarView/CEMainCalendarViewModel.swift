@@ -79,7 +79,7 @@ class CEMainCalendarViewModel {
             guard let new = Calendar.current.date(byAdding: component, value: value, to: working) else { return timeResult }
             working = new
         } while working <= end
-        print(timeResult)
+//        print(timeResult)
         return timeResult
     }
     

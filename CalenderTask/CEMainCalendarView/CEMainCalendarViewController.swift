@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import CoreData
 
-class CEMainCalendarViewController: UIViewController {
+class CEMainCalendarViewController: UIViewController , StoreButtonDelegate{
     
     @IBOutlet weak var presentDateView: CEPresentDateHeader!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -18,22 +19,18 @@ class CEMainCalendarViewController: UIViewController {
     var selectedIndex : IndexPath = [0,14]
     var currentDate = Date()
     var viewModel = CEMainCalendarViewModel()
-    var dateArray: [Date]
-    {
-        return viewModel.dates
-    }
+    var dateArray: [Date] { return viewModel.dates }
+    var timeArray: [Date] { return viewModel.timeResult }
+    let persistance = CEPersistanceService.shared
     
-    var timeArray: [Date]
-    {
-        return viewModel.timeResult
-    }
+    var events = [CalendarEvent]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareCollectionView()
         prepareTableView()
         preparePresentDateView()
-//        viewModel.currentTime()
+//        fetchDataFromCore()
     }
     
     func preparePresentDateView() {
@@ -43,6 +40,8 @@ class CEMainCalendarViewController: UIViewController {
         presentDateView.presentTitleView.topLabel.addGestureRecognizer(tap)
         presentDateView.presentButtonView.leftButton.setImage(UIImage(named: "AddIcon"), for: .normal)
         presentDateView.presentButtonView.rightButton.setImage(UIImage(named: "EventIcon"), for: .normal)
+//        presentDateView.presentButtonView.leftButtonTapped(CEMainCalendarViewController())
+        presentDateView.presentButtonView.buttonDelegate = self
     }
     
     
@@ -70,12 +69,102 @@ class CEMainCalendarViewController: UIViewController {
         let _ = viewModel.dateArray()
         collectionView.selectItem(at:selectedIndex, animated: false, scrollPosition: .centeredHorizontally)
     }
+    
+//    func fetchDataFromCore() {
+//        NotificationCenter.default.addObserver(forName: NSNotification.Name("PersistedDataUpdated"), object: nil, queue: .main) { (_) in
+//
+//        }
+//        persistance.fetch(CalendarEvent.self) { [weak self](events) in
+//            self?.events = events
+//            print(events.count)
+//            self?.ReusableTableView.tableView.reloadData()
+//            if events == []{
+//                self?.getJsonDataAndStore()
+//            }
+//
+//            }
+////        getJsonDataAndStore()
+////        deleteAllDataInCore()
+//    }
+    
+//    func getJsonDataAndStore() {
+//
+//        let url = Bundle.main.url(forResource: "CEData", withExtension: "json")
+//
+//        if let url = url {
+//            let data = try? Data(contentsOf: url)
+//            do{
+//                guard let data = data
+//                else{return}
+//
+//                guard let jsonArray = try JSONSerialization.jsonObject(with: data, options: []) as? [[String: Any]] else{return}
+//
+////                print(jsonArray)
+//
+//                let events: [CalendarEvent] = jsonArray.compactMap {
+//                    guard
+//
+//                        let date = $0["date"] as? String,
+//                        let title = $0["title"] as? String ,
+//                        let color = $0["color"] as? String ,
+//                        let eventType = $0["eventType"] as? String,
+//                        let startTime = $0["startTime"] as? String,
+//                        let endTime = $0["endTime"] as? String,
+//                        let location = $0["location"] as? String,
+//                        let repeatMode = $0["repeatMode"] as? String
+//                    else { return nil }
+//
+//                    let calendarEvent = CalendarEvent(context: persistance.context)
+//                    calendarEvent.date = date
+//                    calendarEvent.title = title
+//                    calendarEvent.color = color
+//                    calendarEvent.eventType = eventType
+//                    calendarEvent.startTime = startTime
+//                    calendarEvent.endTime = endTime
+//                    calendarEvent.location = location
+//                    calendarEvent.repeatMode = repeatMode
+//
+//                    return calendarEvent
+//                }
+//                self.events = events
+//                DispatchQueue.main.async {
+//                    self.persistance.save()
+//                }
+//            }
+//            catch{
+//                print(error)
+//            }
+//        }
+//
+//    }
+    
+//    func deleteAllDataInCore(){
+//
+//        let fetchReq = NSFetchRequest<NSFetchRequestResult>(entityName: "CalendarEvent")
+//        let deleteAllReq = NSBatchDeleteRequest(fetchRequest: fetchReq)
+//
+//        do{
+//            try persistance.context.execute(deleteAllReq)
+//        }catch let error{
+//            print(error)
+//        }
+//    }
 
-
-    @IBAction func filterButtonTapped(_ sender: Any) {
-        let detail = CEReusableController()
-        self.present(detail, animated: true, completion: nil)
+    
+    func didLeftsButtonPress(sender: UIViewController) {
+        self.present(sender, animated: true, completion: nil)
     }
+
+    func didRightButtonPress(sender: UIViewController) {
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        self.navigationController?.pushViewController(sender, animated: true)
+    }
+    
+    @IBAction func filterButtonTapped(_ sender: Any) {
+//        let filterScreen = CEReusableController()
+//        self.present(filterScreen, animated: true, completion: nil)
+    }
+
     
 }
 
@@ -139,6 +228,7 @@ extension CEMainCalendarViewController : UITableViewDataSource, UITableViewDeleg
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = ReusableTableView.tableView.dequeueReusableCell(withIdentifier: "CEMainTableCell", for: indexPath) as? CEMainEventsTableViewCell  else {return UITableViewCell()}
         cell.timeLabel.text = viewModel.timeCalculateConverter(date: timeArray[indexPath.row])
+//        cell.timeLabel.text = events[indexPath.row].title
         return cell
     }
 

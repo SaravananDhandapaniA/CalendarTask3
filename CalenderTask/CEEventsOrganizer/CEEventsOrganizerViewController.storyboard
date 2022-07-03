@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Events Organizer View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="CEEventsOrganizerViewController" id="Y6W-OH-hqX" customClass="CEEventsOrganizerViewController" customModule="CalenderTask" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MCa-ox-tc2">
+                                <rect key="frame" x="0.0" y="44" width="414" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="vlJ-d8-h0S"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Title" id="AlM-7t-wgA"/>
+                                </items>
+                            </navigationBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="F3Q-Oe-UBY">
+                                <rect key="frame" x="0.0" y="84" width="414" height="812"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewLayout key="collectionViewLayout" id="Mv0-RF-yUz" customClass="PinterestLayout" customModule="CalenderTask" customModuleProvider="target"/>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MCa-ox-tc2" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="44" id="Jc0-fV-yqF"/>
+                            <constraint firstItem="F3Q-Oe-UBY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="P6r-iX-LfF"/>
+                            <constraint firstItem="F3Q-Oe-UBY" firstAttribute="top" secondItem="MCa-ox-tc2" secondAttribute="bottom" id="fqF-yc-HLd"/>
+                            <constraint firstAttribute="bottom" secondItem="F3Q-Oe-UBY" secondAttribute="bottom" id="iOs-QR-qKR"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="F3Q-Oe-UBY" secondAttribute="trailing" id="rjB-Bb-VOC"/>
+                            <constraint firstItem="MCa-ox-tc2" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="sxx-s3-lA7"/>
+                            <constraint firstItem="MCa-ox-tc2" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="uDW-JE-UP2"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="collectionView" destination="F3Q-Oe-UBY" id="z1T-Au-u9t"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="19" y="82"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

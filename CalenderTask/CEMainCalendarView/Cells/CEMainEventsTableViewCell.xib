@@ -30,17 +30,29 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D4W-Gc-8DN" userLabel="EventView">
-                        <rect key="frame" x="72.5" y="2" width="341.5" height="42"/>
+                        <rect key="frame" x="72.5" y="7" width="331.5" height="27"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mub-Hc-lWA">
+                                <rect key="frame" x="145" y="3" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mub-Hc-lWA" firstAttribute="centerY" secondItem="D4W-Gc-8DN" secondAttribute="centerY" id="13Z-rN-YVA"/>
+                            <constraint firstItem="mub-Hc-lWA" firstAttribute="centerX" secondItem="D4W-Gc-8DN" secondAttribute="centerX" id="eog-Gb-Kca"/>
+                        </constraints>
                     </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="5cU-rU-YrX" firstAttribute="leading" secondItem="wXD-ex-CBi" secondAttribute="trailing" id="KJJ-7J-zps"/>
-                    <constraint firstItem="D4W-Gc-8DN" firstAttribute="top" secondItem="5cU-rU-YrX" secondAttribute="bottom" id="MN8-gg-CZi"/>
+                    <constraint firstItem="D4W-Gc-8DN" firstAttribute="top" secondItem="5cU-rU-YrX" secondAttribute="bottom" constant="5" id="MN8-gg-CZi"/>
                     <constraint firstAttribute="trailing" secondItem="5cU-rU-YrX" secondAttribute="trailing" id="Mep-UM-Bt3"/>
                     <constraint firstItem="wXD-ex-CBi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="VbJ-KX-ZdY"/>
-                    <constraint firstAttribute="bottom" secondItem="D4W-Gc-8DN" secondAttribute="bottom" id="c2Z-gO-fVu"/>
-                    <constraint firstAttribute="trailing" secondItem="D4W-Gc-8DN" secondAttribute="trailing" id="qeX-3I-J6q"/>
+                    <constraint firstAttribute="bottom" secondItem="D4W-Gc-8DN" secondAttribute="bottom" constant="10" id="c2Z-gO-fVu"/>
+                    <constraint firstAttribute="trailing" secondItem="D4W-Gc-8DN" secondAttribute="trailing" constant="10" id="qeX-3I-J6q"/>
                     <constraint firstItem="D4W-Gc-8DN" firstAttribute="leading" secondItem="wXD-ex-CBi" secondAttribute="trailing" constant="15" id="vAV-VX-7Xz"/>
                     <constraint firstItem="5cU-rU-YrX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="waG-7M-dFj"/>
                     <constraint firstItem="wXD-ex-CBi" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="xbk-P8-j7U"/>
@@ -49,6 +61,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="currentTimeView" destination="5cU-rU-YrX" id="sGy-5S-XcK"/>
+                <outlet property="eventTitle" destination="mub-Hc-lWA" id="t1i-pC-8Yf"/>
                 <outlet property="eventView" destination="D4W-Gc-8DN" id="vjM-nL-rco"/>
                 <outlet property="timeLabel" destination="wXD-ex-CBi" id="jD7-Un-qEq"/>
             </connections>

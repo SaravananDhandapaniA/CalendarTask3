@@ -1,0 +1,44 @@
+
+[
+
+        {
+            "date": "2022-07-01",
+            "title": "NBC Internal Scrum",
+            "color": "Red",
+            "eventType": "Allday",
+            "startTime": "11:45 am",
+            "endTime": "12:15 pm",
+            "location": null,
+            "repeatMode": null
+        },
+        {
+            "date": "2022-07-11",
+            "title": "Happy Birthday",
+            "color": "Blue",
+            "eventType": "Fullday",
+            "startTime": null,
+            "endTime": null,
+            "location": null,
+            "repeatMode": null
+        },
+        {
+            "date": "2022-07-04",
+            "title": "Happy Birthday bae",
+            "color": "Green",
+            "eventType": "Fullday",
+            "startTime": null,
+            "endTime": null,
+            "location": null,
+            "repeatMode": null
+        },
+        {
+            "date": "2022-07-08",
+            "title": "Going to home",
+            "color": "Brown",
+            "eventType": "Remainder",
+            "startTime": "6:30 pm",
+            "endTime": null,
+            "location": null,
+            "repeatMode": null
+        }
+    ]

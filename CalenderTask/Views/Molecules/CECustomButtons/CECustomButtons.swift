@@ -7,12 +7,20 @@
 
 import UIKit
 
+protocol StoreButtonDelegate: NSObject {
+    func didLeftsButtonPress(sender:UIViewController)
+    func didRightButtonPress(sender:UIViewController)
+}
+
+
 class CECustomButtons: UIView {
 
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var rightButton: UIButton!
     
     var view : UIView!
+    
+    weak var buttonDelegate :StoreButtonDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -43,6 +51,17 @@ class CECustomButtons: UIView {
         // Drawing code
     }
     */
+    @IBAction func leftButtonTapped(_ sender: Any) {
+//        buttonDelegate?.didLeftsButtonPress(sender: sender)
+        let storyBoard = UIStoryboard(name: "AddEventViewController", bundle: nil)
+        let addScreen = storyBoard.instantiateViewController(withIdentifier: "AddEventViewController")
+        buttonDelegate?.didLeftsButtonPress(sender: addScreen)
+    }
     
-
+    @IBAction func rightButtonTapped(_ sender: Any) {
+        let storyBoard = UIStoryboard(name: "CEEventsOrganizerViewController", bundle: nil)
+        let eventOrganizerScreen = storyBoard.instantiateViewController(withIdentifier: "CEEventsOrganizerViewController")
+        buttonDelegate?.didRightButtonPress(sender: eventOrganizerScreen)
+    }
+    
 }
