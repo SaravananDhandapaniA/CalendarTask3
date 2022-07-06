@@ -13,7 +13,8 @@ protocol StoreButtonDelegate: NSObject {
 }
 
 
-class CECustomButtons: UIView {
+class CECustomButtons: UIView  {
+    
 
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var rightButton: UIButton!
@@ -44,18 +45,12 @@ class CECustomButtons: UIView {
         guard let view = nib.instantiate(withOwner: self , options: nil).first as? UIView else{return UIView()}
         return view
     }
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+
     @IBAction func leftButtonTapped(_ sender: Any) {
-//        buttonDelegate?.didLeftsButtonPress(sender: sender)
         let storyBoard = UIStoryboard(name: "AddEventViewController", bundle: nil)
         let addScreen = storyBoard.instantiateViewController(withIdentifier: "AddEventViewController")
         buttonDelegate?.didLeftsButtonPress(sender: addScreen)
+
     }
     
     @IBAction func rightButtonTapped(_ sender: Any) {

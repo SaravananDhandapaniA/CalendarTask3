@@ -22,6 +22,8 @@ class CEMainEventsTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         eventView.Viewoval()
+        self.currentTimeView.isHidden = true
     }
+    
     
 }

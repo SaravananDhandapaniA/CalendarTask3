@@ -22,12 +22,12 @@
                                     <constraint firstAttribute="height" constant="40" id="vlJ-d8-h0S"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Title" id="AlM-7t-wgA"/>
+                                    <navigationItem title="Events Organizer" id="AlM-7t-wgA"/>
                                 </items>
                             </navigationBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="F3Q-Oe-UBY">
                                 <rect key="frame" x="0.0" y="84" width="414" height="812"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.92128556966781616" green="0.50170465534438291" blue="0.44344163108935053" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <collectionViewLayout key="collectionViewLayout" id="Mv0-RF-yUz" customClass="PinterestLayout" customModule="CalenderTask" customModuleProvider="target"/>
                                 <cells/>
                             </collectionView>

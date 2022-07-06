@@ -12,10 +12,10 @@ class CEEventsOrganizerViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     
-    
-    var height = [300,200,200,300,300,200,200,300,300,200]
     var isListView = true
-
+    
+    var viewModel = CEEventsOrganizerViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -67,11 +67,12 @@ class CEEventsOrganizerViewController: UIViewController {
 
 extension CEEventsOrganizerViewController : UICollectionViewDelegate, UICollectionViewDataSource , UICollectionViewDelegateFlowLayout , PinterestLayoutDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return viewModel.eventsCount
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CEEventOrganizerCell", for: indexPath) as? CEEventsOrganizerCollectionCell else{return UICollectionViewCell()}
+        cell.configDataForOrganizerCell(data: viewModel.eventsItem[indexPath.row])
         return cell
     }
     
@@ -81,6 +82,6 @@ extension CEEventsOrganizerViewController : UICollectionViewDelegate, UICollecti
 //    }
     
     func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
-        return CGFloat(height[indexPath.row])
+        return CGFloat(viewModel.height[indexPath.row])
     }
 }

@@ -40,3 +40,13 @@ extension UIView {
         self.layer.masksToBounds = true
     }
 }
+
+extension Date {
+    func timeStringWith(strFormat: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = Calendar.current.timeZone
+        dateFormatter.locale = Calendar.current.locale
+        dateFormatter.dateFormat = strFormat
+        return dateFormatter.string(from: self)
+    }
+}

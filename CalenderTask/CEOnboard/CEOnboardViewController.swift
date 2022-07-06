@@ -97,8 +97,8 @@ class CEOnboardViewController: UIViewController , CEOnboardPageViewDelegate {
                 skipButton.setTitle("<", for: .normal)
                 nextButton.frame.origin = CGPoint(x: 100, y: 46)
                 skipButton.frame.origin = CGPoint(x: -100, y: 46)
-                nextButton.translatesAutoresizingMaskIntoConstraints = false
-                skipButton.translatesAutoresizingMaskIntoConstraints = false
+//                nextButton.translatesAutoresizingMaskIntoConstraints = false
+//                skipButton.translatesAutoresizingMaskIntoConstraints = false
 //                nextwidthConstraint.constant = 100
 //                nextHeightConstraint.constant = 50
 //                skipWidthConstraint.constant = 100

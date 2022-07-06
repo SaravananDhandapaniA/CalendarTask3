@@ -5,7 +5,7 @@
             "date": "2022-07-01",
             "title": "NBC Internal Scrum",
             "color": "Red",
-            "eventType": "Allday",
+            "eventType": "Daily",
             "startTime": "11:45 am",
             "endTime": "12:15 pm",
             "location": null,
@@ -15,7 +15,7 @@
             "date": "2022-07-11",
             "title": "Happy Birthday",
             "color": "Blue",
-            "eventType": "Fullday",
+            "eventType": "Allday",
             "startTime": null,
             "endTime": null,
             "location": null,
@@ -25,8 +25,28 @@
             "date": "2022-07-04",
             "title": "Happy Birthday bae",
             "color": "Green",
-            "eventType": "Fullday",
+            "eventType": "Allday",
             "startTime": null,
+            "endTime": null,
+            "location": null,
+            "repeatMode": null
+        },
+        {
+            "date": "2022-07-04",
+            "title": "Happy Birthday Subha",
+            "color": "Green",
+            "eventType": "Allday",
+            "startTime": null,
+            "endTime": null,
+            "location": null,
+            "repeatMode": null
+        },
+        {
+            "date": "2022-07-04",
+            "title": "Tea time",
+            "color": "Blue",
+            "eventType": "Remainder",
+            "startTime": "04:30 PM",
             "endTime": null,
             "location": null,
             "repeatMode": null
@@ -34,11 +54,142 @@
         {
             "date": "2022-07-08",
             "title": "Going to home",
-            "color": "Brown",
+            "color": "Violet",
             "eventType": "Remainder",
-            "startTime": "6:30 pm",
+            "startTime": "06:30 pm",
+            "endTime": null,
+            "location": null,
+            "repeatMode": null
+        },
+        {
+            "date": "2022-07-05",
+            "title": "Vinith Bday",
+            "color": "Green",
+            "eventType": "Allday",
+            "startTime": null,
+            "endTime": null,
+            "location": null,
+            "repeatMode": null
+        },
+        {
+            "date": "2022-07-05",
+            "title": "Tea time",
+            "color": "Green",
+            "eventType": "Remainder",
+            "startTime": "05:30 PM",
+            "endTime": null,
+            "location": null,
+            "repeatMode": null
+        },
+        {
+            "date": "2022-07-06",
+            "title": "Phone Charge",
+            "color": "Red",
+            "eventType": "Remainder",
+            "startTime": "01:30 PM",
+            "endTime": null,
+            "location": null,
+            "repeatMode": null
+        },
+        {
+            "date": "2022-07-06",
+            "title": "Lunch",
+            "color": "Blue",
+            "eventType": "Meeting",
+            "startTime": "01:00 PM",
+            "endTime": "02:00 PM",
+            "location": null,
+            "repeatMode": null
+        },
+        {
+            "date": "2022-07-06",
+            "title": "Birthday",
+            "color": "Green",
+            "eventType": "Allday",
+            "startTime": null,
+            "endTime": null,
+            "location": null,
+            "repeatMode": null
+        },
+        {
+            "date": "2022-07-06",
+            "title": "Tea time",
+            "color": "Green",
+            "eventType": "Remainder",
+            "startTime": "05:30 PM",
+            "endTime": null,
+            "location": null,
+            "repeatMode": null
+        },
+        {
+            "date": "2022-07-06",
+            "title": "Scrum",
+            "color": "Violet",
+            "eventType": "Meeting",
+            "startTime": "11:30 AM",
+            "endTime": "12:30 PM",
+            "location": null,
+            "repeatMode": null
+        },
+        {
+            "date": "2022-07-06",
+            "title": "Water",
+            "color": "Green",
+            "eventType": "Remainder",
+            "startTime": "10:30 AM",
+            "endTime": null,
+            "location": null,
+            "repeatMode": null
+        },
+        {
+            "date": "2022-07-06",
+            "title": "Play TT",
+            "color": "Green",
+            "eventType": "Allday",
+            "startTime": null,
+            "endTime": null,
+            "location": null,
+            "repeatMode": null
+        },
+        {
+            "date": "2022-07-06",
+            "title": "Doing task",
+            "color": "Green",
+            "eventType": "Allday",
+            "startTime": null,
+            "endTime": null,
+            "location": null,
+            "repeatMode": null
+        },
+        {
+            "date": "2022-07-07",
+            "title": "Doing task",
+            "color": "Blue",
+            "eventType": "Allday",
+            "startTime": null,
+            "endTime": null,
+            "location": null,
+            "repeatMode": null
+        },
+        {
+            "date": "2022-07-07",
+            "title": "Jogging",
+            "color": "Red",
+            "eventType": "Remainder",
+            "startTime": "06:00 AM",
+            "endTime": null,
+            "location": null,
+            "repeatMode": null
+        },
+        {
+            "date": "2022-07-07",
+            "title": "Tea",
+            "color": "Violet",
+            "eventType": "Allday",
+            "startTime": null,
             "endTime": null,
             "location": null,
             "repeatMode": null
         }
+        
     ]

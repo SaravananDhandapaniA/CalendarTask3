@@ -14,5 +14,9 @@ class CEAddEventCollectionCell: UICollectionViewCell {
         
         circle()
     }
+    
+    func setupCell(color: String ) {
+        self.backgroundColor = UIColor(named: color)
+    }
 
 }

@@ -828,7 +828,7 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Erl-EE-XyY" userLabel="Allday event view">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Erl-EE-XyY" userLabel="Allday event view" customClass="CEReusableCollectionView" customModule="CalenderTask">
                                 <rect key="frame" x="0.0" y="313" width="414" height="80"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
@@ -868,7 +868,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="ReusableTableView" destination="Xle-HJ-pOb" id="CX0-gO-ubk"/>
-                        <outlet property="allDayEventView" destination="Erl-EE-XyY" id="uFf-Bn-Ok6"/>
+                        <outlet property="alldayCollectionView" destination="Erl-EE-XyY" id="Ymq-7v-VfH"/>
                         <outlet property="collectionView" destination="BQ1-W7-cMA" id="FEE-zM-Fzs"/>
                         <outlet property="presentDateView" destination="3lF-2Y-orS" id="B7t-lX-QNO"/>
                     </connections>

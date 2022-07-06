@@ -79,6 +79,10 @@
 		5E76D5FC2864DF3B00F89D99 /* CEOnBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E76D5FB2864DF3B00F89D99 /* CEOnBoardViewModel.swift */; };
 		5E776F1C286D655F00B7105C /* CEReusableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E776F1B286D655F00B7105C /* CEReusableTableView.swift */; };
 		5E776F1E286D65B600B7105C /* CEReusableTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E776F1D286D65B600B7105C /* CEReusableTableView.xib */; };
+		5E7C83ED2872EB3000F5D388 /* AlldayEventsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7C83EB2872EB3000F5D388 /* AlldayEventsCollectionCell.swift */; };
+		5E7C83EE2872EB3000F5D388 /* AlldayEventsCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E7C83EC2872EB3000F5D388 /* AlldayEventsCollectionCell.xib */; };
+		5E7C83F02874028400F5D388 /* CEEventsOrganizerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7C83EF2874028400F5D388 /* CEEventsOrganizerViewModel.swift */; };
+		5E7C83F22874336C00F5D388 /* CEAddEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7C83F12874336C00F5D388 /* CEAddEventViewModel.swift */; };
 		5E8304A32859D93E004AE831 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E8304A22859D93E004AE831 /* data.json */; };
 		5E8304A52859E694004AE831 /* EventDisplayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8304A42859E694004AE831 /* EventDisplayCell.swift */; };
 		5EA9B467285A4C5400034A0D /* MYRIAAMI.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 5EA9B466285A4C5400034A0D /* MYRIAAMI.TTF */; };
@@ -187,6 +191,10 @@
 		5E76D5FB2864DF3B00F89D99 /* CEOnBoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CEOnBoardViewModel.swift; sourceTree = "<group>"; };
 		5E776F1B286D655F00B7105C /* CEReusableTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CEReusableTableView.swift; sourceTree = "<group>"; };
 		5E776F1D286D65B600B7105C /* CEReusableTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CEReusableTableView.xib; sourceTree = "<group>"; };
+		5E7C83EB2872EB3000F5D388 /* AlldayEventsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlldayEventsCollectionCell.swift; sourceTree = "<group>"; };
+		5E7C83EC2872EB3000F5D388 /* AlldayEventsCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlldayEventsCollectionCell.xib; sourceTree = "<group>"; };
+		5E7C83EF2874028400F5D388 /* CEEventsOrganizerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CEEventsOrganizerViewModel.swift; sourceTree = "<group>"; };
+		5E7C83F12874336C00F5D388 /* CEAddEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CEAddEventViewModel.swift; sourceTree = "<group>"; };
 		5E8304A22859D93E004AE831 /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		5E8304A42859E694004AE831 /* EventDisplayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDisplayCell.swift; sourceTree = "<group>"; };
 		5EA9B466285A4C5400034A0D /* MYRIAAMI.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = MYRIAAMI.TTF; sourceTree = "<group>"; };
@@ -487,8 +495,8 @@
 		5E553843287095010067C3F1 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				5E2F97E228696F9D002D1DFE /* CEMainEventsTableViewCell.xib */,
-				5E2F97E128696F9D002D1DFE /* CEMainEventsTableViewCell.swift */,
+				5E7C83EA2872EAE000F5D388 /* AlldayEventsCollectonCell */,
+				5E7C83E92872EAB200F5D388 /* EventsTableViewCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -498,6 +506,7 @@
 			children = (
 				5E18FDDD286EF4380035F046 /* AddEventViewController.swift */,
 				5E18FDDF286EF45A0035F046 /* AddEventViewController.storyboard */,
+				5E7C83F12874336C00F5D388 /* CEAddEventViewModel.swift */,
 				5E553846287095D90067C3F1 /* Cells */,
 				5E553845287095B90067C3F1 /* Views */,
 			);
@@ -631,6 +640,24 @@
 			path = CEReusableTableview;
 			sourceTree = "<group>";
 		};
+		5E7C83E92872EAB200F5D388 /* EventsTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				5E2F97E228696F9D002D1DFE /* CEMainEventsTableViewCell.xib */,
+				5E2F97E128696F9D002D1DFE /* CEMainEventsTableViewCell.swift */,
+			);
+			path = EventsTableViewCell;
+			sourceTree = "<group>";
+		};
+		5E7C83EA2872EAE000F5D388 /* AlldayEventsCollectonCell */ = {
+			isa = PBXGroup;
+			children = (
+				5E7C83EB2872EB3000F5D388 /* AlldayEventsCollectionCell.swift */,
+				5E7C83EC2872EB3000F5D388 /* AlldayEventsCollectionCell.xib */,
+			);
+			path = AlldayEventsCollectonCell;
+			sourceTree = "<group>";
+		};
 		5EA9B465285A4C0400034A0D /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -646,6 +673,7 @@
 			children = (
 				5EFA729828716B4600203762 /* CEEventsOrganizerViewController.swift */,
 				5EFA729A28716B7700203762 /* CEEventsOrganizerViewController.storyboard */,
+				5E7C83EF2874028400F5D388 /* CEEventsOrganizerViewModel.swift */,
 				5E103D4D2871B45B00906D00 /* Cells */,
 			);
 			path = CEEventsOrganizer;
@@ -761,6 +789,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E2F9818286B34D9002D1DFE /* CEPresentDateHeader.xib in Resources */,
+				5E7C83EE2872EB3000F5D388 /* AlldayEventsCollectionCell.xib in Resources */,
 				5E2F97F42869B90B002D1DFE /* LottieFilter.json in Resources */,
 				5EA9B467285A4C5400034A0D /* MYRIAAMI.TTF in Resources */,
 				5E2F97F52869B90B002D1DFE /* LottieEvents.json in Resources */,
@@ -919,6 +948,7 @@
 				5E5C58F028570364006DF9D5 /* CalendarViewModel.swift in Sources */,
 				5E76D5ED2864761D00F89D99 /* CEOnboardingFilterCell.swift in Sources */,
 				5E553833287026EB0067C3F1 /* CalendarEvent+CoreDataClass.swift in Sources */,
+				5E7C83F22874336C00F5D388 /* CEAddEventViewModel.swift in Sources */,
 				5E6DD32128658CCB0081AEBC /* CEMainCalendarViewController.swift in Sources */,
 				5E553834287026EB0067C3F1 /* CalendarEvent+CoreDataProperties.swift in Sources */,
 				5E55383B28705E650067C3F1 /* CEAddEventView.swift in Sources */,
@@ -928,6 +958,7 @@
 				5E2F9807286B097D002D1DFE /* CELabel.swift in Sources */,
 				5E6DD3282865E9610081AEBC /* CEMainCalendarViewModel.swift in Sources */,
 				5E45BFD9285B075900D56140 /* EmptyEventDisplayCell.swift in Sources */,
+				5E7C83F02874028400F5D388 /* CEEventsOrganizerViewModel.swift in Sources */,
 				5E18FDDE286EF4390035F046 /* AddEventViewController.swift in Sources */,
 				5E76D5FC2864DF3B00F89D99 /* CEOnBoardViewModel.swift in Sources */,
 				5E18FDE8286F16BC0035F046 /* CEPersistanceService.swift in Sources */,
@@ -942,6 +973,7 @@
 				5E2F97E328696F9D002D1DFE /* CEMainEventsTableViewCell.swift in Sources */,
 				5E2F980C286B0BDC002D1DFE /* CEPresentTitleSummary.swift in Sources */,
 				5E2F9809286B098C002D1DFE /* CEButton.swift in Sources */,
+				5E7C83ED2872EB3000F5D388 /* AlldayEventsCollectionCell.swift in Sources */,
 				5E776F1C286D655F00B7105C /* CEReusableTableView.swift in Sources */,
 				5E1457032852195F0078AF31 /* ViewController.swift in Sources */,
 				5E76D5E22864741800F89D99 /* CEOnboardingCalendarCell.swift in Sources */,

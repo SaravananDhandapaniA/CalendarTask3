@@ -174,6 +174,18 @@ class CEMainCalendarViewModel {
         dateFormatter.dateFormat = "hh:mm a"
         return dateFormatter.string(from: date)
     }
+    func convetTime(at index : Int) -> String {
+        let date = timeResult[index]
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "hh:mm a"
+        return dateFormatter.string(from: date)
+    }
+    
+    func dateStringConverter(date:Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        return dateFormatter.string(from: date)
+    }
     
 //    func timeConverter(string: String) -> Date {
 //        let dateFormatter = DateFormatter()
