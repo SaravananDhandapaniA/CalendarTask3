@@ -12,7 +12,7 @@ import UIKit
 //}
 
 
-class AddEventViewController: UIViewController , UISheetPresentationControllerDelegate , EventTypeButtonDelegate{
+class CEAddEventViewController: UIViewController , UISheetPresentationControllerDelegate , EventTypeButtonDelegate{
     
     @IBOutlet weak var addEventDoneButton: UIButton!
     
@@ -167,7 +167,7 @@ class AddEventViewController: UIViewController , UISheetPresentationControllerDe
     
 }
 
-extension AddEventViewController: UICollectionViewDelegate, UICollectionViewDataSource , UICollectionViewDelegateFlowLayout{
+extension CEAddEventViewController: UICollectionViewDelegate, UICollectionViewDataSource , UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5

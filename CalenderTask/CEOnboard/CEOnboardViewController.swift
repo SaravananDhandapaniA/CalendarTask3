@@ -15,6 +15,8 @@ class CEOnboardViewController: UIViewController , CEOnboardPageViewDelegate {
     @IBOutlet weak var skipHeightConstraint: NSLayoutConstraint!
     
     
+    let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+    
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var nextButton: UIButton! {
         didSet{
@@ -43,6 +45,7 @@ class CEOnboardViewController: UIViewController , CEOnboardPageViewDelegate {
                 OnBoardPageViewController?.forwardPage()
             case 3:
                 dismiss(animated: true, completion: nil)
+               
             default : break
             }
         }
@@ -54,12 +57,14 @@ class CEOnboardViewController: UIViewController , CEOnboardPageViewDelegate {
             switch index {
             case 0:
                 dismiss(animated: true, completion: nil)
+
             case 1:
                 OnBoardPageViewController?.backwardPage()
             case 2:
                 OnBoardPageViewController?.backwardPage()
             case 3:
                 dismiss(animated: true, completion: nil)
+
             default : break
             }
         }

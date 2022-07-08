@@ -1,23 +1,22 @@
 //
-//  CEReusableController.swift
+//  CEFilterViewController.swift
 //  CalenderTask
 //
-//  Created by Tringapps on 27/06/22.
+//  Created by Tringapps on 07/07/22.
 //
 
 import UIKit
 
-class CEReusableController: UIViewController , UISheetPresentationControllerDelegate {
-    
+class CEFilterViewController: UIViewController , UISheetPresentationControllerDelegate{
+
     override var sheetPresentationController: UISheetPresentationController {
         presentationController as! UISheetPresentationController
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         prepareSheet()
-
     }
 
     func prepareSheet() {
@@ -26,4 +25,5 @@ class CEReusableController: UIViewController , UISheetPresentationControllerDele
         sheetPresentationController.prefersGrabberVisible = true
         sheetPresentationController.detents = [.medium()]
     }
+    
 }

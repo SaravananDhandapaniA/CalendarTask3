@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Filter View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="CEFilterViewController" id="Y6W-OH-hqX" customClass="CEFilterViewController" customModule="CalenderTask" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="450"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eSc-Bk-oYc">
+                                <rect key="frame" x="0.0" y="400" width="414" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="IIS-W2-dXk"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Done"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="noW-iF-Lu7"/>
+                        <color key="backgroundColor" red="0.83921568627450982" green="0.45098039215686275" blue="0.40784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="noW-iF-Lu7" firstAttribute="trailing" secondItem="eSc-Bk-oYc" secondAttribute="trailing" id="1wa-pV-tpJ"/>
+                            <constraint firstItem="eSc-Bk-oYc" firstAttribute="bottom" secondItem="5EZ-qb-Rvc" secondAttribute="bottomMargin" id="2kY-7c-z3Y"/>
+                            <constraint firstItem="eSc-Bk-oYc" firstAttribute="leading" secondItem="noW-iF-Lu7" secondAttribute="leading" id="uhR-5x-7Tg"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="414" height="450"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="82.608695652173921" y="81.696428571428569"/>
+        </scene>
+    </scenes>
+</document>

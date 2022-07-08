@@ -47,8 +47,8 @@ class CECustomButtons: UIView  {
     }
 
     @IBAction func leftButtonTapped(_ sender: Any) {
-        let storyBoard = UIStoryboard(name: "AddEventViewController", bundle: nil)
-        let addScreen = storyBoard.instantiateViewController(withIdentifier: "AddEventViewController")
+        let storyBoard = UIStoryboard(name: "CEAddEventViewController", bundle: nil)
+        let addScreen = storyBoard.instantiateViewController(withIdentifier: "CEAddEventViewController")
         buttonDelegate?.didLeftsButtonPress(sender: addScreen)
 
     }

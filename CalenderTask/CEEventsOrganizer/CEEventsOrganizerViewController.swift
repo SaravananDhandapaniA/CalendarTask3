@@ -6,19 +6,28 @@
 //
 
 import UIKit
+import Foundation
+
+//protocol CETaskDetailDelegate : NSObjectProtocol {
+//   func didPassData(data:CalendarEvent)
+//}
 
 class CEEventsOrganizerViewController: UIViewController {
+    
     
     @IBOutlet weak var collectionView: UICollectionView!
     
     
-    var isListView = true
+    var isListView = Bool()
     
     var viewModel = CEEventsOrganizerViewModel()
     
+   static var selectedEvent: CalendarEvent?
+//    weak var TaskDetailDelegate: CETaskDetailDelegate?
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         prepareCollectionViewForEventOrganizer()
     }
     
@@ -35,8 +44,11 @@ class CEEventsOrganizerViewController: UIViewController {
     
     @objc func viewButtonClicked(sender: UIBarButtonItem){
         print("press")
-        self.collectionView.startInteractiveTransition(to: isListView ? self.listCVLayout : self.gridCVLayout, completion: nil)
-          self.collectionView.finishInteractiveTransition()
+        if !isListView {
+        self.collectionView.startInteractiveTransition(to: isListView ? self.gridCVLayout : self.listCVLayout, completion: nil)
+        self.collectionView.finishInteractiveTransition()
+        }
+        isListView = true
     }
 
 
@@ -72,9 +84,22 @@ extension CEEventsOrganizerViewController : UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CEEventOrganizerCell", for: indexPath) as? CEEventsOrganizerCollectionCell else{return UICollectionViewCell()}
-        cell.configDataForOrganizerCell(data: viewModel.eventsItem[indexPath.row])
+        cell.configDataForOrganizerCell(data: viewModel.eventArray[indexPath.row])
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if !isListView {
+            let storyBoard = UIStoryboard(name: "CETaskDetailViewController", bundle: nil)
+            guard let vc = storyBoard.instantiateViewController(withIdentifier: "CETaskDetailViewController") as? CETaskDetailViewController else{return}
+//            print(viewModel.eventArray[indexPath.row])
+//            vc.configDataForTaskDetail(data: viewModel.eventArray[indexPath.row])
+            CEEventsOrganizerViewController.selectedEvent = viewModel.eventArray[indexPath.row]
+            self.present(vc, animated: true, completion: nil)
+        }
+    }
+    
     
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 //        let itemSize = (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.right + 10 )) / 2

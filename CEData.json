@@ -56,7 +56,37 @@
             "title": "Going to home",
             "color": "Violet",
             "eventType": "Remainder",
-            "startTime": "06:30 pm",
+            "startTime": "06:30 PM",
+            "endTime": null,
+            "location": null,
+            "repeatMode": null
+        },
+        {
+            "date": "2022-07-08",
+            "title": "Working",
+            "color": "Blue",
+            "eventType": "Allday",
+            "startTime": null,
+            "endTime": null,
+            "location": "Madathukulam",
+            "repeatMode": "Daily"
+        },
+        {
+            "date": "2022-07-08",
+            "title": "BDay Dada",
+            "color": "Red",
+            "eventType": "Allday",
+            "startTime": null,
+            "endTime": null,
+            "location": null,
+            "repeatMode": null
+        },
+        {
+            "date": "2022-07-08",
+            "title": "Cricket",
+            "color": "Green",
+            "eventType": "Remainder",
+            "startTime": "10:30 PM",
             "endTime": null,
             "location": null,
             "repeatMode": null

@@ -165,7 +165,7 @@ class CEMainCalendarViewModel {
     
     func presentDateConverter(date: Date) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "d MMMM , YYYY"
+        dateFormatter.dateFormat = "MMMM  d"
         return dateFormatter.string(from: date)
     }
     

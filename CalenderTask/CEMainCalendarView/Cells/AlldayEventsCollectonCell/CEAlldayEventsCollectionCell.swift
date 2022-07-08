@@ -7,16 +7,18 @@
 
 import UIKit
 
-class AlldayEventsCollectionCell: UICollectionViewCell {
+class CEAlldayEventsCollectionCell: UICollectionViewCell {
     
     
+
     @IBOutlet weak var allDayEventTitle: UILabel!
+    
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        oval()
+        ovalForAllDayevent()
     }
 
     func configDataForAlldayevents(data : CalendarEvent) {

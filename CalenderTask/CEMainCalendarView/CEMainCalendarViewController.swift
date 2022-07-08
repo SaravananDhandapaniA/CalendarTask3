@@ -46,14 +46,13 @@ class CEMainCalendarViewController: UIViewController , StoreButtonDelegate {
         presentDateView.presentButtonView.buttonDelegate = self
     }
     
-    
     @objc func tapFunction(sender:UITapGestureRecognizer) {
         collectionView.selectItem(at:selectedIndex, animated: false, scrollPosition: .centeredHorizontally)
         }
     
     func registerReusableCells() {
         self.ReusableTableView.tableView.register(UINib.init(nibName: "CEMainEventsTableViewCell", bundle: .main), forCellReuseIdentifier: "CEMainTableCell")
-        self.alldayCollectionView.collectionView.register(UINib.init(nibName: "AlldayEventsCollectionCell", bundle: .main), forCellWithReuseIdentifier: "AllDayEventsCell")
+        self.alldayCollectionView.collectionView.register(UINib.init(nibName: "CEAlldayEventsCollectionCell", bundle: .main), forCellWithReuseIdentifier: "AllDayEventsCell")
     }
     
     
@@ -61,7 +60,7 @@ class CEMainCalendarViewController: UIViewController , StoreButtonDelegate {
         ReusableTableView.tableView.dataSource = self
         ReusableTableView.tableView.delegate = self
         ReusableTableView.tableView.rowHeight = 80
-//        let nextDate = Calendar.current.date(byAdding: .day, value: 1, to: selectedDate)
+        ReusableTableView.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         let _ = viewModel.timeArray(fromStart: viewModel.dateConverter(string: "2022-06-30 12:00 AM"), toEnd: viewModel.dateConverter(string: "2022-07-01 12:00 AM") , component: .minute, value: 30)
     }
     
@@ -164,7 +163,8 @@ class CEMainCalendarViewController: UIViewController , StoreButtonDelegate {
     }
     
     @IBAction func filterButtonTapped(_ sender: Any) {
-        let filterScreen = CEReusableController()
+        let storyBoard = UIStoryboard(name: "CEFilterViewController", bundle: nil)
+        let filterScreen = storyBoard.instantiateViewController(withIdentifier: "CEFilterViewController")
         self.present(filterScreen, animated: true, completion: nil)
     }
 
@@ -191,7 +191,7 @@ extension CEMainCalendarViewController : UICollectionViewDataSource , UICollecti
         
         if (collectionView == alldayCollectionView.collectionView) {
             let filteredArray = filterForAlldayEvents()
-            guard let cell = alldayCollectionView.collectionView.dequeueReusableCell(withReuseIdentifier: "AllDayEventsCell", for: indexPath) as? AlldayEventsCollectionCell else {return UICollectionViewCell()}
+            guard let cell = alldayCollectionView.collectionView.dequeueReusableCell(withReuseIdentifier: "AllDayEventsCell", for: indexPath) as? CEAlldayEventsCollectionCell else {return UICollectionViewCell()}
             cell.configDataForAlldayevents(data: filteredArray[indexPath.row])
             return cell
         }
@@ -262,9 +262,13 @@ extension CEMainCalendarViewController : UITableViewDataSource, UITableViewDeleg
             cell.eventTitle.text = ""
             cell.eventView.backgroundColor = .clear
         }
-
-
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyBoard = UIStoryboard(name: "CEAddEventViewController", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "CEAddEventViewController")
+        self.present(vc, animated: true, completion: nil)
     }
     
     func eventMappingForCurrentDate() -> [CalendarEvent] {

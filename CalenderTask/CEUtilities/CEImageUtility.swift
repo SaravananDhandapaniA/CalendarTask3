@@ -22,7 +22,12 @@ extension UIButton {
 extension UICollectionViewCell {
     
     func oval() {
-        self.layer.cornerRadius = 15
+        self.layer.cornerRadius = 25
+        self.layer.masksToBounds = true
+    }
+    
+    func ovalForAllDayevent() {
+        self.layer.cornerRadius = 20
         self.layer.masksToBounds = true
     }
     
@@ -36,7 +41,7 @@ extension UICollectionViewCell {
 extension UIView {
     
     func Viewoval() {
-        self.layer.cornerRadius = 15
+        self.layer.cornerRadius = 30
         self.layer.masksToBounds = true
     }
 }
