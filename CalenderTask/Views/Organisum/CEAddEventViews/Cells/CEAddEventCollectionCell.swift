@@ -8,6 +8,15 @@
 import UIKit
 
 class CEAddEventCollectionCell: UICollectionViewCell {
+    
+    @IBOutlet weak var selectIndicator: UIImageView!
+    
+    override var isSelected: Bool {
+        didSet {
+            selectIndicator.isHidden = !isSelected
+        }
+    }
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

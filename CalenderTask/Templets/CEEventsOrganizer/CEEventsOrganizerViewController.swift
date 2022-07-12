@@ -39,11 +39,12 @@ class CEEventsOrganizerViewController: UIViewController {
         if let layout = collectionView?.collectionViewLayout as? PinterestLayout {
           layout.delegate = self
         }
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "GridEvent"), style: .plain, target: self, action: #selector(viewButtonClicked(sender:)))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "ListEvent"), style: .plain, target: self, action: #selector(viewButtonClicked(sender:)))
     }
     
     @objc func viewButtonClicked(sender: UIBarButtonItem){
         print("press")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "GridEvent"), style: .plain, target: self, action: .none)
         if !isListView {
         self.collectionView.startInteractiveTransition(to: isListView ? self.gridCVLayout : self.listCVLayout, completion: nil)
         self.collectionView.finishInteractiveTransition()
@@ -77,7 +78,7 @@ class CEEventsOrganizerViewController: UIViewController {
  
 }
 
-extension CEEventsOrganizerViewController : UICollectionViewDelegate, UICollectionViewDataSource , UICollectionViewDelegateFlowLayout , PinterestLayoutDelegate{
+extension CEEventsOrganizerViewController : UICollectionViewDelegate, UICollectionViewDataSource ,UICollectionViewDelegateFlowLayout , PinterestLayoutDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.eventsCount
     }
@@ -90,15 +91,45 @@ extension CEEventsOrganizerViewController : UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        guard let item = collectionView.cellForItem(at: indexPath) as? CEEventsOrganizerCollectionCell else {return}
+        
+        
         if !isListView {
             let storyBoard = UIStoryboard(name: "CETaskDetailViewController", bundle: nil)
             guard let vc = storyBoard.instantiateViewController(withIdentifier: "CETaskDetailViewController") as? CETaskDetailViewController else{return}
-//            print(viewModel.eventArray[indexPath.row])
-//            vc.configDataForTaskDetail(data: viewModel.eventArray[indexPath.row])
+            //            print(viewModel.eventArray[indexPath.row])
+            //            vc.configDataForTaskDetail(data: viewModel.eventArray[indexPath.row])
             CEEventsOrganizerViewController.selectedEvent = viewModel.eventArray[indexPath.row]
             self.present(vc, animated: true, completion: nil)
+        } else {
+            UIView.animate(withDuration: 0.5) {
+                self.view.bringSubviewToFront(collectionView)
+                collectionView.bringSubviewToFront(item)
+                let collectionFlowLayout = UICollectionViewFlowLayout()
+                collectionFlowLayout.minimumInteritemSpacing = 10
+                collectionFlowLayout.minimumLineSpacing = 10
+                item.frame.size.width = self.view.frame.width
+                item.frame.size.height = 100
+            }
+        }
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        guard let item = collectionView.cellForItem(at: indexPath) as? CEEventsOrganizerCollectionCell else {return}
+        
+        UIView.animate(withDuration: 0.5) {
+            self.view.bringSubviewToFront(collectionView)
+            collectionView.bringSubviewToFront(item)
+            let collectionFlowLayout = UICollectionViewFlowLayout()
+            collectionFlowLayout.minimumInteritemSpacing = 10
+            collectionFlowLayout.minimumLineSpacing = 10
+            item.frame.size.width = self.view.frame.width
+            item.frame.size.height = 80
         }
     }
+        
+        
     
     
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

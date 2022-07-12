@@ -8,7 +8,8 @@
 import UIKit
 import CoreData
 
-class CEMainCalendarViewController: UIViewController , StoreButtonDelegate {
+class CEMainCalendarViewController: UIViewController , StoreButtonDelegate , CEAddEventDelegate { 
+
    
     @IBOutlet weak var presentDateView: CEPresentDateHeader!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -153,7 +154,8 @@ class CEMainCalendarViewController: UIViewController , StoreButtonDelegate {
     }
 
     
-    func didLeftsButtonPress(sender: UIViewController) {
+    func didLeftsButtonPress(sender: CEAddEventViewController) {
+        sender.addEventDelegate = self
         self.present(sender, animated: true, completion: nil)
     }
 
@@ -168,6 +170,10 @@ class CEMainCalendarViewController: UIViewController , StoreButtonDelegate {
         self.present(filterScreen, animated: true, completion: nil)
     }
 
+    func didReloadView() {
+        alldayCollectionView.collectionView.reloadData()
+        ReusableTableView.tableView.reloadData()
+    }
     
     
 }

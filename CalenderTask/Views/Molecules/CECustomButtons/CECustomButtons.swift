@@ -8,7 +8,7 @@
 import UIKit
 
 protocol StoreButtonDelegate: NSObject {
-    func didLeftsButtonPress(sender:UIViewController)
+    func didLeftsButtonPress(sender:CEAddEventViewController)
     func didRightButtonPress(sender:UIViewController)
 }
 
@@ -48,9 +48,8 @@ class CECustomButtons: UIView  {
 
     @IBAction func leftButtonTapped(_ sender: Any) {
         let storyBoard = UIStoryboard(name: "CEAddEventViewController", bundle: nil)
-        let addScreen = storyBoard.instantiateViewController(withIdentifier: "CEAddEventViewController")
+        guard let addScreen = storyBoard.instantiateViewController(withIdentifier: "CEAddEventViewController") as? CEAddEventViewController else {return}
         buttonDelegate?.didLeftsButtonPress(sender: addScreen)
-
     }
     
     @IBAction func rightButtonTapped(_ sender: Any) {

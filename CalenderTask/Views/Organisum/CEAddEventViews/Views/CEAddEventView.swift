@@ -9,10 +9,11 @@ import UIKit
 
 protocol EventTypeButtonDelegate: NSObject {
     func didEventTypeButtonPress(sender:UIAlertController)
-
 }
 
-class CEAddEventView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
+
+class CEAddEventView: UIView, UIPickerViewDelegate, UIPickerViewDataSource  {
+    
    
     var viewModel = CEAddEventViewModel()
     var selectedRow = 0
@@ -91,7 +92,8 @@ class CEAddEventView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
             let name = selected
             self.pickerViewButton.setTitle(name, for: .normal)
         }))
-        buttonDelegate?.didEventTypeButtonPress(sender: alert)
+        self.buttonDelegate?.didEventTypeButtonPress(sender: alert)
+
     }
     
     

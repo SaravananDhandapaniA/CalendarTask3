@@ -7,10 +7,10 @@
 
 import UIKit
 
-//protocol CEAddEventsDelegate : NSObjectProtocol {
-//    func didReloadView()
-//}
+protocol CEAddEventDelegate : NSObjectProtocol {
+    func didReloadView()
 
+}
 
 class CEAddEventViewController: UIViewController , UISheetPresentationControllerDelegate , EventTypeButtonDelegate{
     
@@ -25,10 +25,12 @@ class CEAddEventViewController: UIViewController , UISheetPresentationController
     let endTimePicker = UIDatePicker()
     var selectedColor : String?
     var selectedEventType: String?
+    
 
     let persistance = CEPersistanceService.shared
     
-//    weak var addEventDelegate: CEAddEventsDelegate?
+//    weak var eventTypeDelegate: CEEventsTypeDelegate?
+    weak var addEventDelegate: CEAddEventDelegate?
 
     var isButtonEnable = Bool()
     
@@ -38,7 +40,6 @@ class CEAddEventViewController: UIViewController , UISheetPresentationController
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       
         prepareSheet()
         prepareCollectionViewForAddEvents()
         addEventView.buttonDelegate = self
@@ -54,6 +55,7 @@ class CEAddEventViewController: UIViewController , UISheetPresentationController
         if let layout = addEventView.resuableCollectionView.collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .horizontal
         }
+        
     }
     
     func prepareSheet() {
@@ -120,6 +122,7 @@ class CEAddEventViewController: UIViewController , UISheetPresentationController
         prepareEventType()
         self.present(sender, animated: true, completion: nil)
     }
+
     
     func prepareEventType() {
         selectedEventType = addEventView.pickerViewButton.titleLabel?.text
@@ -157,8 +160,8 @@ class CEAddEventViewController: UIViewController , UISheetPresentationController
         newEvents.location = addEventView.locationTextField.text
         newEvents.repeatMode = addEventView.repeatModeTextField.text
         
-         self.persistance.save()
-//        addEventDelegate?.didReloadView()
+        self.persistance.save()
+        self.addEventDelegate?.didReloadView()
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -180,8 +183,6 @@ extension CEAddEventViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        guard let cell = collectionView.cellForItem(at: indexPath) as? CEAddEventCollectionCell else{return}
-    
         selectedColor = viewModel.backgroundColorArray[indexPath.row]
     }
     

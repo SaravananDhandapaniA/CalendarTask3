@@ -220,6 +220,46 @@
             "endTime": null,
             "location": null,
             "repeatMode": null
+        },
+        {
+            "date": "2022-07-12",
+            "title": "Green Tea",
+            "color": "Green",
+            "eventType": "Allday",
+            "startTime": null,
+            "endTime": null,
+            "location": null,
+            "repeatMode": null
+        },
+        {
+            "date": "2022-07-12",
+            "title": "HBD Dada",
+            "color": "Blue",
+            "eventType": "Allday",
+            "startTime": null,
+            "endTime": null,
+            "location": null,
+            "repeatMode": null
+        },
+        {
+            "date": "2022-07-12",
+            "title": "Laptop Charge",
+            "color": "Red",
+            "eventType": "Remainder",
+            "startTime": "11:30 AM",
+            "endTime": null,
+            "location": "Madathukulam",
+            "repeatMode": "Daily"
+        },
+        {
+            "date": "2022-07-12",
+            "title": "Tablet",
+            "color": "Yellow",
+            "eventType": "Remainder",
+            "startTime": "09:30 AM",
+            "endTime": null,
+            "location": null,
+            "repeatMode": null
         }
         
     ]
