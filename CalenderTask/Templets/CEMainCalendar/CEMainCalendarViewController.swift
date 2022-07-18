@@ -37,6 +37,12 @@ class CEMainCalendarViewController: UIViewController , StoreButtonDelegate , CEA
         preparePresentDateView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        alldayCollectionView.collectionView.reloadData()
+        ReusableTableView.tableView.reloadData()
+    }
+    
     func preparePresentDateView() {
         presentDateView.presentTitleView.topLabel.text = viewModel.presentDateConverter(date: viewModel.startDate)
         let tap = UITapGestureRecognizer(target: self, action: #selector(CEMainCalendarViewController.tapFunction))
@@ -171,8 +177,8 @@ class CEMainCalendarViewController: UIViewController , StoreButtonDelegate , CEA
     }
 
     func didReloadView() {
-        alldayCollectionView.collectionView.reloadData()
-        ReusableTableView.tableView.reloadData()
+        self.viewDidLoad()
+        self.viewWillAppear(true)
     }
     
     

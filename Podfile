@@ -16,5 +16,6 @@ target 'CalenderTask' do
     # Pods for testing
   end
 pod 'lottie-ios'
+pod 'DropDown'
 
 end

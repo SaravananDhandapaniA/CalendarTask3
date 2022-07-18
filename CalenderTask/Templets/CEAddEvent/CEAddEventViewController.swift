@@ -6,19 +6,23 @@
 //
 
 import UIKit
+import DropDown
 
 protocol CEAddEventDelegate : NSObjectProtocol {
     func didReloadView()
 
 }
 
-class CEAddEventViewController: UIViewController , UISheetPresentationControllerDelegate , EventTypeButtonDelegate{
+class CEAddEventViewController: UIViewController , UISheetPresentationControllerDelegate , EventTypeButtonDelegate , RepeatModeDelegate{
+    
     
     @IBOutlet weak var addEventDoneButton: UIButton!
     
     @IBOutlet weak var addEventView: CEAddEventView!
     
     var viewModel = CEAddEventViewModel()
+    
+    let dropDwon = DropDown()
     
     let datePicker = UIDatePicker()
     let startTimePicker = UIDatePicker()
@@ -43,10 +47,26 @@ class CEAddEventViewController: UIViewController , UISheetPresentationController
         prepareSheet()
         prepareCollectionViewForAddEvents()
         addEventView.buttonDelegate = self
+        addEventView.repeatDelegate = self
         prepareEventType()
         createDatePicker()
+        repeatFieldTapped()
     }
 
+   
+    
+    func repeatFieldTapped() {
+        dropDwon.anchorView = addEventView.repeatModeTextField
+        dropDwon.dataSource = viewModel.repeatModeItems
+        dropDwon.selectionAction = { [unowned self] (index: Int, item: String) in
+            self.addEventView.repeatModeTextField.text = viewModel.repeatModeItems[index]
+          }
+    }
+    
+    func didRepeatTapped() {
+        dropDwon.show()
+    }
+    
     func prepareCollectionViewForAddEvents(){
         self.addEventView.resuableCollectionView.collectionView.register(UINib.init(nibName: "CEAddEventCollectionCell", bundle: .main), forCellWithReuseIdentifier: "CEAddEventCell")
         addEventView.resuableCollectionView.collectionView.delegate = self

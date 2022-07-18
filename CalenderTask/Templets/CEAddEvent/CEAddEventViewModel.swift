@@ -15,4 +15,6 @@ class CEAddEventViewModel {
     var backgroundColorArray:[String] = ["Blue","Green","Red","Violet","Yellow"]
     
     var eventTypes = ["Meeting", "Allday", "Remainder"]
+    
+    var repeatModeItems = ["Daily","Weekly","Monthly","Yearly"]
 }

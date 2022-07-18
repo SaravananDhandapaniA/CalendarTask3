@@ -260,6 +260,86 @@
             "endTime": null,
             "location": null,
             "repeatMode": null
+        },
+        {
+            "date": "2022-07-13",
+            "title": "Jira",
+            "color": "Blue",
+            "eventType": "Allday",
+            "startTime": null,
+            "endTime": null,
+            "location": null,
+            "repeatMode": null
+        },
+        {
+            "date": "2022-07-13",
+            "title": "Medicine",
+            "color": "Red",
+            "eventType": "Remainder",
+            "startTime": "10:30 AM",
+            "endTime": null,
+            "location": null,
+            "repeatMode": null
+        },
+        {
+            "date": "2022-07-13",
+            "title": "Tea",
+            "color": "Green",
+            "eventType": "Remainder",
+            "startTime": "05:00 PM",
+            "endTime": null,
+            "location": null,
+            "repeatMode": null
+        },
+        {
+            "date": "2022-07-13",
+            "title": "Purnima",
+            "color": "Violet",
+            "eventType": "Allday",
+            "startTime": null,
+            "endTime": null,
+            "location": null,
+            "repeatMode": null
+        },
+        {
+            "date": "2022-07-13",
+            "title": "NBC Sprint",
+            "color": "Yellow",
+            "eventType": "Meeting",
+            "startTime": "11:30 AM",
+            "endTime": "12:30 PM",
+            "location": "Chennai",
+            "repeatMode": "Daily"
+        },
+        {
+            "date": "2022-07-14",
+            "title": "Pratipada",
+            "color": "Blue",
+            "eventType": "Allday",
+            "startTime": null,
+            "endTime": null,
+            "location": null,
+            "repeatMode": null
+        },
+        {
+            "date": "2022-07-14",
+            "title": "KT Session",
+            "color": "Red",
+            "eventType": "Meeting",
+            "startTime": "02:30 PM",
+            "endTime": "03:30 PM",
+            "location": "Chennai",
+            "repeatMode": "Weekly"
+        },
+        {
+            "date": "2022-07-14",
+            "title": "Learning",
+            "color": "Violet",
+            "eventType": "Remainder",
+            "startTime": "06:30 PM",
+            "endTime": null,
+            "location": null,
+            "repeatMode": null
         }
         
     ]

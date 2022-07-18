@@ -21,13 +21,23 @@ class CEOnboardViewController: UIViewController , CEOnboardPageViewDelegate {
     @IBOutlet weak var nextButton: UIButton! {
         didSet{
             nextButton.layer.cornerRadius = 25
-            nextButton.layer.masksToBounds = true
+            nextButton.layer.masksToBounds = false
+            nextButton.layer.shadowColor = UIColor.blue.cgColor
+            nextButton.layer.shadowOffset = CGSize(width: 0, height: 3)
+            nextButton.layer.shadowRadius = 10
+            nextButton.layer.shadowOpacity = 0.5
+            nextButton.layer.shadowPath = nil
         }
     }
     @IBOutlet weak var skipButton: UIButton! {
         didSet{
             skipButton.layer.cornerRadius = 25
-            skipButton.layer.masksToBounds = true
+            skipButton.layer.masksToBounds = false
+            skipButton.layer.shadowColor = UIColor.blue.cgColor
+            skipButton.layer.shadowOffset = CGSize(width: 0, height: 3)
+            skipButton.layer.shadowRadius = 10
+            skipButton.layer.shadowOpacity = 0.5
+            skipButton.layer.shadowPath = nil
         }
     }
     

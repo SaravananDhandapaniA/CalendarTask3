@@ -105,9 +105,6 @@ extension CEEventsOrganizerViewController : UICollectionViewDelegate, UICollecti
             UIView.animate(withDuration: 0.5) {
                 self.view.bringSubviewToFront(collectionView)
                 collectionView.bringSubviewToFront(item)
-                let collectionFlowLayout = UICollectionViewFlowLayout()
-                collectionFlowLayout.minimumInteritemSpacing = 10
-                collectionFlowLayout.minimumLineSpacing = 10
                 item.frame.size.width = self.view.frame.width
                 item.frame.size.height = 100
             }
@@ -118,15 +115,15 @@ extension CEEventsOrganizerViewController : UICollectionViewDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         guard let item = collectionView.cellForItem(at: indexPath) as? CEEventsOrganizerCollectionCell else {return}
         
-        UIView.animate(withDuration: 0.5) {
-            self.view.bringSubviewToFront(collectionView)
-            collectionView.bringSubviewToFront(item)
-            let collectionFlowLayout = UICollectionViewFlowLayout()
-            collectionFlowLayout.minimumInteritemSpacing = 10
-            collectionFlowLayout.minimumLineSpacing = 10
-            item.frame.size.width = self.view.frame.width
-            item.frame.size.height = 80
+        if isListView {
+            UIView.animate(withDuration: 0.5) {
+                self.view.bringSubviewToFront(collectionView)
+                collectionView.bringSubviewToFront(item)
+                item.frame.size.width = self.view.frame.width
+                item.frame.size.height = 80
+            }
         }
+       
     }
         
         

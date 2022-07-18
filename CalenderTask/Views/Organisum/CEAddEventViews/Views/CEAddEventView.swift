@@ -11,6 +11,10 @@ protocol EventTypeButtonDelegate: NSObject {
     func didEventTypeButtonPress(sender:UIAlertController)
 }
 
+protocol RepeatModeDelegate : NSObjectProtocol {
+    func didRepeatTapped()
+}
+
 
 class CEAddEventView: UIView, UIPickerViewDelegate, UIPickerViewDataSource  {
     
@@ -38,7 +42,7 @@ class CEAddEventView: UIView, UIPickerViewDelegate, UIPickerViewDataSource  {
     
     
     weak var buttonDelegate: EventTypeButtonDelegate?
-    
+    weak var repeatDelegate: RepeatModeDelegate?
     
     var view : UIView!
     
@@ -115,6 +119,11 @@ class CEAddEventView: UIView, UIPickerViewDelegate, UIPickerViewDataSource  {
         label.sizeToFit()
         return label
     }
-
+    
+    
+    @IBAction func showDropDownButtonTapped(_ sender: Any) {
+        repeatDelegate?.didRepeatTapped()
+    }
+    
 
 }
